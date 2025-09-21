@@ -1,30 +1,35 @@
-.navbar {
-    height: 100px;
+ .navbar {
+     height: 100px;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 1000;
 
-    .wrapper {
-        max-width: 1366px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
+     .wrapper {
+         max-width: 1366px;
+         margin: auto;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 100%;
 
-        span {
-            font-weight: bold;
-            margin-left: 50px;
-            font-size: larger;
-        }
+         span {
+             font-weight: bold;
+             margin-left: 50px;
+             font-size: larger;
+         }
 
-        .social {
-            display: flex;
-            gap: 20px;
+         .social {
+             display: flex;
+             gap: 20px;
 
-            img {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-        }
-    }
-}
+             img {
+                 width: 20px;
+                 height: 20px;
+                 border-radius: 50%;
+                 cursor: pointer;
+             }
+         }
+     }
+ }
