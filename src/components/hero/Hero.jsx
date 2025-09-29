@@ -49,7 +49,7 @@ const Hero = () => {
                 >
                     <motion.h2 variants={textVariants}>Gimhani Jayamanna</motion.h2>
                     <motion.h1 variants={textVariants}>
-                        Web developer and UI designer
+                        Third-year IT undergraduate at the University of Moratuwa, passionate about Software Engineering and UI/UX design, creating intuitive and user-friendly digital experiences.
                     </motion.h1>
                     <motion.div variants={textVariants} className="buttons">
                         <motion.button variants={textVariants}>

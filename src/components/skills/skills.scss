@@ -7,102 +7,131 @@
     background: linear-gradient(180deg, #0c0c1d, #111132);
 }
 
-.skills-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 24px;
-    letter-spacing: 2px;
-    text-align: center;
-    animation: fadeInDown 1s;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
+
 
 .skills-subtitle {
-    font-size: 2rem;
-    color: #a3a3ff;
-    margin-bottom: 24px;
+    padding-top: 60px;
+    font-size: 1.55rem;
+    color: #ffcc66;
     text-align: center;
     animation: fadeInDown 1.2s;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
 }
 
-.technical-skills-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
-    margin-bottom: 60px;
-}
-
-.skill-box {
-    background: linear-gradient(135deg, #23233a 0%, #3a2d5c 60%, #1a1a2e 100%);
-    border-radius: 18px;
-    box-shadow: 0 4px 24px #0c0c1d44;
-    padding: 16px 12px;
-    width: 180px;
+/* New vertical list layout for technical skills */
+.skills-groups {
+    width: 100%;
+    max-width: 880px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+
+}
+
+.skill-row {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    animation: fadeInUp 1.2s;
-    transition: transform 0.2s;
+    /* vertically center category with pills */
+    gap: 10px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, rgba(49, 35, 58, 0.45) 0%, rgba(16, 53, 82, 0.35) 60%, rgba(26, 26, 46, 0.5) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px -6px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
 }
 
-.skill-box:hover {
-    transform: scale(1.08);
-    box-shadow: 0 8px 32px #0c0c1d99;
-}
-
-.skill-box-title {
-    color: #a3a3ff;
-    font-size: 1.2rem;
+.skill-category {
+    flex: 0 0 250px;
     font-weight: 600;
-    margin-bottom: 12px;
-    text-align: center;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
 }
+
 
 .skill-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
 }
 
 .skill-item {
-    color: #fff;
-    font-size: 1rem;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.25), rgba(255, 140, 0, 0.15));
+    border: 1px solid rgba(255, 200, 120, 0.25);
+    border-radius: 40px;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    color: #ffe2b0;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, transform 0.3s ease;
     opacity: 0;
     animation: fadeInSkill 0.8s forwards;
 }
 
-.soft-skills-row {
+.skill-item:hover {
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
+    transform: translateY(-3px);
+}
+
+/* Responsive: stack category above pills on narrow screens for better centering */
+@media (max-width: 700px) {
+    .skill-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .skill-category {
+        flex: initial;
+        justify-content: center;
+    }
+
+    .skill-list {
+        justify-content: center;
+    }
+}
+
+/* Soft skills now reuse pill concept */
+.soft-skills-pills {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    margin-bottom: 40px;
+    max-width: 100%;
+    margin: 10px auto 50px;
 }
 
-.soft-skill-box {
-    background: linear-gradient(135deg, #343454 0%, #5c2d3a 60%, #1a1a2e 100%);
-    border-radius: 14px;
-    box-shadow: 0 2px 12px #0c0c1d33;
-    padding: 16px 24px;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-    min-width: 120px;
-    animation: fadeInUp 1.4s;
-    transition: transform 0.2s;
+.soft-skill-pill {
+    /* Increased size specifically for soft skill pills per request */
+    padding: 11px 26px;
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.25), rgba(255, 140, 0, 0.15));
+    border: 1px solid rgba(255, 200, 120, 0.25);
+    border-radius: 50px;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    color: #ffe2b0;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.soft-skill-box:hover {
-    transform: scale(1.12);
-    box-shadow: 0 12px 32px #0c0c1d99;
+.soft-skill-pill:hover {
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.55);
 }
 
 @keyframes fadeInDown {

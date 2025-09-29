@@ -3,6 +3,7 @@ import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
 import Parallax from "./components/parallax/Parallax";
 import Skills from "./components/skills/Skills";
+import Projects from "./components/projects/Projects";
 
 const App = () => {
     return <div>
@@ -14,7 +15,8 @@ const App = () => {
         <section>
             <Parallax type="projects" />
         </section>
-        <section id="Projects">Projects</section>
+        {/* Projects now renders 4 full-screen <section> slides internally; first slide has id="Projects" */}
+        <Projects />
         <section >
             <Parallax type="achievements" />
         </section>

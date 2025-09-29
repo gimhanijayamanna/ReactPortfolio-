@@ -1,6 +1,6 @@
 import "./skills.scss";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef, useMemo } from "react";
 
 const technicalSkills = [
     {
@@ -44,63 +44,94 @@ const softSkills = [
 const Skills = () => {
     const controls = useAnimation();
     const sectionRef = useRef(null);
+    const inView = useInView(sectionRef, { amount: 0.3, margin: "0px 0px -10% 0px" });
+
+    // Variants memoized to avoid recreation
+    const containerVariants = useMemo(() => ({
+        hidden: { opacity: 0, y: 80 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { when: "beforeChildren", staggerChildren: 0.08, duration: 0.6, ease: [0.25, 0.8, 0.35, 1] }
+        },
+        exit: { opacity: 0, y: -80, transition: { duration: 0.4 } }
+    }), []);
+
+    const rowVariants = useMemo(() => ({
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        exit: { opacity: 0, y: -30, transition: { duration: 0.35 } }
+    }), []);
+
+    const pillVariants = useMemo(() => ({
+        hidden: { opacity: 0, y: 18, scale: 0.95 },
+        visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4 } },
+        exit: { opacity: 0, y: -12, scale: 0.95, transition: { duration: 0.3 } }
+    }), []);
+
+    const softPillVariants = useMemo(() => ({
+        hidden: { opacity: 0, scale: 0.6, rotate: -8, y: 14, filter: "blur(4px)" },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            y: 0,
+            filter: "blur(0px)",
+            transition: { type: "spring", stiffness: 160, damping: 18, mass: 0.6 }
+        },
+        exit: { opacity: 0, scale: 0.7, rotate: 6, y: -10, transition: { duration: 0.25 } }
+    }), []);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (!sectionRef.current) return;
-            const rect = sectionRef.current.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                controls.start({
-                    opacity: 1,
-                    x: 0,
-                    transition: { type: "spring", duration: 0.8, staggerChildren: 0.12 }
-                });
-            }
-        };
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [controls]);
+        controls.start(inView ? "visible" : "hidden");
+    }, [inView, controls]);
 
     return (
-        <div className="skills-section" ref={sectionRef}>
-            <h1 className="skills-title">SKILLS</h1>
+        <motion.div
+            className="skills-section"
+            ref={sectionRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            exit="exit"
+        >
             <h2 className="skills-subtitle">TECHNICAL SKILLS</h2>
-            <div className="technical-skills-row">
-                {technicalSkills.map((group, idx) => (
+            <div className="skills-groups">
+                {technicalSkills.map((group) => (
                     <motion.div
-                        className="skill-box"
+                        className="skill-row"
                         key={group.title}
-                        whileHover={{ scale: 1.08, boxShadow: "0 8px 32px #0c0c1d99" }}
-                        initial={{ opacity: 0, x: -80 }}
-                        animate={controls}
-                        transition={{ duration: 0.6, delay: idx * 0.1 }}
+                        variants={rowVariants}
                     >
-                        <h3 className="skill-box-title">{group.title}</h3>
+                        <div className="skill-category">{group.title}</div>
                         <ul className="skill-list">
                             {group.skills.map((skill) => (
-                                <li key={skill} className="skill-item">{skill}</li>
+                                <motion.li
+                                    key={skill}
+                                    className="skill-item"
+                                    variants={pillVariants}
+                                >
+                                    {skill}
+                                </motion.li>
                             ))}
                         </ul>
                     </motion.div>
                 ))}
             </div>
             <h2 className="skills-subtitle">SOFT SKILLS</h2>
-            <div className="soft-skills-row">
+            <motion.div className="soft-skills-pills" variants={rowVariants}>
                 {softSkills.map((skill, idx) => (
-                    <motion.div
-                        className="soft-skill-box"
+                    <motion.span
                         key={skill}
-                        whileHover={{ scale: 1.12, boxShadow: "0 12px 32px #0c0c1d99" }}
-                        initial={{ opacity: 0, x: -80 }}
-                        animate={controls}
-                        transition={{ duration: 0.6, delay: idx * 0.1 + 0.5 }}
+                        className="soft-skill-pill"
+                        variants={softPillVariants}
+                        transition={{ delay: idx * 0.05 }}
                     >
                         {skill}
-                    </motion.div>
+                    </motion.span>
                 ))}
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 
