@@ -1,0 +1,248 @@
+.achievements-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    padding: 20px 20px;
+}
+
+.achievements-subtitle {
+    padding-top: 50px;
+    font-size: 1.8rem;
+    color: #ffcc66;
+    text-align: center;
+    animation: fadeInDown 1.2s;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.achievements-groups {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.achievement-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.12), rgba(255, 140, 0, 0.08));
+    border: 1px solid rgba(255, 200, 120, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 180px;
+}
+
+.achievement-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffcc66, #ff8c00);
+    border-radius: 16px 16px 0 0;
+}
+
+.achievement-row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.18), rgba(255, 140, 0, 0.12));
+}
+
+.achievement-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.achievement-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.achievement-badges {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.achievement-badge {
+    padding: 4px 12px;
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.35), rgba(255, 140, 0, 0.25));
+    border: 1px solid rgba(255, 200, 120, 0.4);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffe2b0;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-year {
+    padding: 4px 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(200, 200, 200, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #e0e0e0;
+    backdrop-filter: blur(4px);
+}
+
+.achievement-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #c0c0c0;
+    margin-top: auto;
+    font-style: italic;
+    flex-grow: 1;
+}
+
+/* Extracurricular activities cards */
+.extracurricular-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 30px;
+}
+
+.extracurricular-card {
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.12), rgba(255, 140, 0, 0.08));
+    border: 1px solid rgba(255, 200, 120, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+}
+
+.extracurricular-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffcc66, #ff8c00);
+    border-radius: 16px 16px 0 0;
+}
+
+.extracurricular-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.18), rgba(255, 140, 0, 0.12));
+}
+
+.card-header {
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.card-year {
+    padding: 3px 8px;
+    background: rgba(255, 204, 102, 0.2);
+    border: 1px solid rgba(255, 204, 102, 0.3);
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #ffcc66;
+    white-space: nowrap;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.card-role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffcc66;
+    margin-bottom: 6px;
+}
+
+.card-organization {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #c0c0c0;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .achievement-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .achievement-title {
+        font-size: 1rem;
+    }
+
+    .extracurricular-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-section {
+        padding: 0 15px;
+    }
+
+    .achievement-row {
+        padding: 16px 18px;
+    }
+
+    .extracurricular-card {
+        padding: 16px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

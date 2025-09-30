@@ -5,6 +5,7 @@ import Parallax from "./components/parallax/Parallax";
 import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
+import Achievements from "./components/achievements/Achievements";
 
 const App = () => {
     return <div>
@@ -21,7 +22,7 @@ const App = () => {
         <section >
             <Parallax type="achievements" />
         </section>
-        <section id="Achievements">Achievements</section>
+        <section id="Achievements"><Achievements /></section>
         <section>
             <Parallax type="contact" />
         </section>

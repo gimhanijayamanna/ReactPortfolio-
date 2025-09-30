@@ -38,6 +38,16 @@ const sliderVariants = {
 };
 
 const Hero = () => {
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <div className="hero">
             <div className="wrapper">
@@ -49,13 +59,24 @@ const Hero = () => {
                 >
                     <motion.h2 variants={textVariants}>Gimhani Jayamanna</motion.h2>
                     <motion.h1 variants={textVariants}>
-                        Third-year IT undergraduate at the University of Moratuwa, passionate about Software Engineering and UI/UX design, creating intuitive and user-friendly digital experiences.
+                        Third-year IT undergraduate at <br /> University of Moratuwa
                     </motion.h1>
+                    <motion.p variants={textVariants} className="hero-description">
+                        passionate about Software Engineering and UI/UX design, creating intuitive and user-friendly digital experiences.
+                    </motion.p>
                     <motion.div variants={textVariants} className="buttons">
-                        <motion.button variants={textVariants}>
+                        <motion.button
+                            variants={textVariants}
+                            onClick={() => scrollToSection('Projects')}
+                        >
                             See the Latest Works
                         </motion.button>
-                        <motion.button variants={textVariants}>Contact Me</motion.button>
+                        <motion.button
+                            variants={textVariants}
+                            onClick={() => scrollToSection('Contact')}
+                        >
+                            Contact Me
+                        </motion.button>
                     </motion.div>
                     <motion.img
                         variants={textVariants}
@@ -65,14 +86,6 @@ const Hero = () => {
                     />
                 </motion.div>
             </div>
-            <motion.div
-                className="slidingTextContainer"
-                variants={sliderVariants}
-                initial="initial"
-                animate="animate"
-            >
-                Create Build Grow
-            </motion.div>
             <div className="imageContainer">
                 <img src="/hero.png" alt="" />
             </div>
