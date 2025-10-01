@@ -14,14 +14,16 @@ const App = () => {
             <Parallax type="skills" />
         </section>
         <section id="Skills"><Skills /></section>
+
         <section>
             <Parallax type="projects" />
         </section>
-        {/* Projects now renders 4 full-screen <section> slides internally; first slide has id="Projects" */}
+
         <Projects />
         <section >
             <Parallax type="achievements" />
         </section>
+
         <section id="Achievements"><Achievements /></section>
         <section>
             <Parallax type="contact" />

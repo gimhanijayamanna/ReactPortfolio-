@@ -58,7 +58,10 @@ const ProjectSlide = ({ item, first }) => {
                 <motion.div className="textContainer" style={{ y }}>
                     <h2>{item.title}</h2>
                     <div className="meta">
-                        <div className="role"><span className="label">Role:</span> {item.role}</div>
+                        <div className="role">
+                            <span className="label">Role:</span>
+                            <div className="role-description">{item.role}</div>
+                        </div>
                         <div className="techStack">
                             <span className="label">Technologies:</span>
                             <ul>

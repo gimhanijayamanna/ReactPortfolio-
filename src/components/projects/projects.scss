@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .projectsGroup {
     position: relative;
 }
@@ -55,12 +57,25 @@
         grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
         gap: 60px;
         align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
     }
 
     .imageContainer {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include mobile {
+            width: 100%;
+            max-height: 300px;
+        }
 
         img {
             width: 100%;
@@ -78,12 +93,25 @@
         flex-direction: column;
         gap: 28px;
 
+        @include mobile {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
         h2 {
             font-size: clamp(1.8rem, 3.2vw, 3rem);
             background: linear-gradient(90deg, #ffb347, #ffcc33);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+
+            @include mobile {
+                font-size: 1.5rem;
+                padding: 5px;
+                align-items: center;
+                text-align: center;
+            }
         }
 
         p {
@@ -91,6 +119,13 @@
             line-height: 1.5;
             color: #d0d0dc;
             max-width: 560px;
+
+            @include mobile {
+                font-size: 0.8rem;
+                padding: 5px;
+                align-items: center;
+                text-align: center;
+            }
         }
 
         .meta {
@@ -98,6 +133,12 @@
             flex-direction: column;
             gap: 14px;
             font-size: 0.9rem;
+
+            @include mobile {
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
 
             .label {
                 font-weight: 600;
@@ -110,12 +151,24 @@
 
             .role {
                 color: #f2f2f7;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                .role-description {
+                    color: #f2f2f7;
+                }
             }
 
             .techStack {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
+
+                @include mobile {
+                    align-items: center;
+                    text-align: center;
+                }
 
                 ul {
                     list-style: none;
@@ -124,6 +177,10 @@
                     gap: 10px;
                     padding: 0;
                     margin: 0;
+
+                    @include mobile {
+                        justify-content: center;
+                    }
 
                     li {
                         padding: 6px 14px;
@@ -136,6 +193,8 @@
                         backdrop-filter: blur(4px);
                         box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
                         transition: background 0.3s ease, transform 0.3s ease;
+
+
                     }
 
                     li:hover {
@@ -161,6 +220,10 @@
             overflow: hidden;
             transition: transform 0.35s ease, box-shadow 0.35s ease;
             box-shadow: 0 8px 22px -8px rgba(0, 0, 0, 0.6);
+
+            @include mobile {
+                align-self: center;
+            }
         }
 
         button::after {

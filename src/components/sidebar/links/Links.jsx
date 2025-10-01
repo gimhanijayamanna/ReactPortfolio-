@@ -28,7 +28,7 @@ const itemVariants = {
     },
 };
 
-const Links = () => {
+const Links = ({ setOpen }) => {
     const items = [
         "Home",
         "Skills",
@@ -37,11 +37,35 @@ const Links = () => {
         "Contact"
     ];
 
+    const handleLinkClick = (item) => {
+        // Close sidebar when any link is clicked on all screen sizes
+        setOpen(false);
+
+        // Scroll to section
+        const element = document.getElementById(item);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     // Always animate open for demo; you can control with state
     return (
         <motion.div className="links" variants={variants} animate="open" initial="closed">
             {items.map((item) => (
-                <motion.a href={`#${item}`} key={item} variants={itemVariants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                <motion.a
+                    href={`#${item}`}
+                    key={item}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleLinkClick(item);
+                    }}
+                >
                     {item}
                 </motion.a>
             ))}

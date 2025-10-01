@@ -1,5 +1,5 @@
 import "./skills.scss";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useMemo } from "react";
 
 const technicalSkills = [
@@ -20,7 +20,7 @@ const technicalSkills = [
         skills: ["Figma", "Canva"],
     },
     {
-        title: "IDE’S",
+        title: "IDE'S",
         skills: ["VS Code", "IntelliJ", "CLion", "Visual Studio"],
     },
     {
@@ -37,14 +37,46 @@ const softSkills = [
     "Leadership",
     "Time Management",
     "Teamwork",
-    "Communication (Fluent in English and Sinhala)",
+    "Fluent in English and Sinhala",
     "Adaptability to change"
 ];
 
-const Skills = () => {
+const SkillSlide = ({ children, title, variants }) => {
+    const ref = useRef(null);
     const controls = useAnimation();
-    const sectionRef = useRef(null);
-    const inView = useInView(sectionRef, { amount: 0.3, margin: "0px 0px -10% 0px" });
+    const inView = useInView(ref, { amount: 0.3, margin: "0px 0px -10% 0px" });
+
+    // Track scroll for subtle parallax / motion inside each slide
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+    const y = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+
+    useEffect(() => {
+        controls.start(inView ? "visible" : "hidden");
+    }, [inView, controls]);
+
+    return (
+        <div className="skillSlide" ref={ref}>
+            <div className="content">
+                <motion.div style={{ y }}>
+                    <h2 className="skills-subtitle">{title}</h2>
+                    <motion.div
+                        variants={variants}
+                        initial="hidden"
+                        animate={controls}
+                        exit="exit"
+                    >
+                        {children}
+                    </motion.div>
+                </motion.div>
+            </div>
+        </div>
+    );
+};
+
+const Skills = () => {
+    const containerRef = useRef(null);
+    const controls = useAnimation();
+    const inView = useInView(containerRef, { amount: 0.3, margin: "0px 0px -10% 0px" });
 
     // Variants memoized to avoid recreation
     const containerVariants = useMemo(() => ({
@@ -87,51 +119,61 @@ const Skills = () => {
     }, [inView, controls]);
 
     return (
-        <motion.div
-            className="skills-section"
-            ref={sectionRef}
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls}
-            exit="exit"
-        >
-            <h2 className="skills-subtitle">TECHNICAL SKILLS</h2>
-            <div className="skills-groups">
-                {technicalSkills.map((group) => (
-                    <motion.div
-                        className="skill-row"
-                        key={group.title}
-                        variants={rowVariants}
-                    >
-                        <div className="skill-category">{group.title}</div>
-                        <ul className="skill-list">
-                            {group.skills.map((skill) => (
-                                <motion.li
-                                    key={skill}
-                                    className="skill-item"
-                                    variants={pillVariants}
-                                >
-                                    {skill}
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                ))}
-            </div>
-            <h2 className="skills-subtitle">SOFT SKILLS</h2>
-            <motion.div className="soft-skills-pills" variants={rowVariants}>
-                {softSkills.map((skill, idx) => (
-                    <motion.span
-                        key={skill}
-                        className="soft-skill-pill"
-                        variants={softPillVariants}
-                        transition={{ delay: idx * 0.05 }}
-                    >
-                        {skill}
-                    </motion.span>
-                ))}
-            </motion.div>
-        </motion.div>
+        <div className="skillsGroup" ref={containerRef}>
+            {/* Technical Skills Slide */}
+            <SkillSlide title="TECHNICAL SKILLS">
+                <motion.div
+                    className="skills-groups"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={controls}
+                    exit="exit"
+                >
+                    {technicalSkills.map((group) => (
+                        <motion.div
+                            className="skill-row"
+                            key={group.title}
+                            variants={rowVariants}
+                        >
+                            <div className="skill-category">{group.title}</div>
+                            <ul className="skill-list">
+                                {group.skills.map((skill) => (
+                                    <motion.li
+                                        key={skill}
+                                        className="skill-item"
+                                        variants={pillVariants}
+                                    >
+                                        {skill}
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </SkillSlide>
+
+            {/* Soft Skills Slide */}
+            <SkillSlide title="SOFT SKILLS">
+                <motion.div
+                    className="soft-skills-pills"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={controls}
+                    exit="exit"
+                >
+                    {softSkills.map((skill, idx) => (
+                        <motion.span
+                            key={skill}
+                            className="soft-skill-pill"
+                            variants={softPillVariants}
+                            transition={{ delay: idx * 0.05 }}
+                        >
+                            {skill}
+                        </motion.span>
+                    ))}
+                </motion.div>
+            </SkillSlide>
+        </div>
     );
 };
 
