@@ -9,11 +9,27 @@
     gap: 40px;
     scroll-snap-align: start;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 
     @include mobile {
         width: 100%;
         padding: 10px;
         flex-direction: column;
+    }
+
+    @include tablet {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 30px;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
     }
 
     .textContainer {
@@ -30,6 +46,14 @@
             margin-bottom: -30px;
         }
 
+        @include tablet {
+            gap: 25px;
+            text-align: center;
+            align-items: center;
+            margin-top: 150px;
+            margin-bottom: 0;
+        }
+
         h1 {
             font-size: 80px;
             line-height: 88px;
@@ -37,11 +61,20 @@
             @include mobile {
                 font-size: 30px;
             }
+
+            @include tablet {
+                font-size: 50px;
+                line-height: 50px;
+            }
         }
 
         span {
             font-weight: 250;
             color: #ffcc66;
+
+            @include tablet {
+                font-size: 1.4rem;
+            }
         }
     }
 
@@ -52,6 +85,19 @@
         @include mobile {
             padding: 30px;
             width: 100%;
+        }
+
+        @include tablet {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 120px;
+        }
+
+        /* iPad Pro specific - larger margin bottom */
+        @media screen and (min-width: 1024px) and (max-width: 1366px) {
+            margin-bottom: 200px;
         }
 
         .phoneSvg {
@@ -70,6 +116,12 @@
             flex-direction: column;
             gap: 20px;
 
+            @include tablet {
+                gap: 35px;
+                max-width: 600px;
+                width: 100%;
+            }
+
             input,
             textarea {
                 padding: 20px;
@@ -80,6 +132,11 @@
 
                 @include mobile {
                     padding: 10px;
+                }
+
+                @include tablet {
+                    padding: 25px;
+                    font-size: 1rem;
                 }
             }
 
@@ -92,6 +149,12 @@
 
                 @include mobile {
                     padding: 10px;
+                }
+
+                @include tablet {
+                    padding: 15px;
+                    font-size: 1.1rem;
+                    font-weight: 600;
                 }
             }
         }

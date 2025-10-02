@@ -18,6 +18,18 @@
         /* Maintain fixed height */
     }
 
+    @include tablet {
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .wrapper {
         max-width: 1366px;
         height: 100%;
@@ -39,6 +51,20 @@
             align-items: center;
         }
 
+        @include tablet {
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 20px;
+        }
+
         .textContainer {
             width: 50%;
             height: 100%;
@@ -55,6 +81,18 @@
                 text-align: center;
             }
 
+            @include tablet {
+                width: 100%;
+                height: auto;
+                gap: 20px;
+                align-items: center;
+                text-align: center;
+                order: 1;
+                margin-top: 100px;
+                padding: 50px;
+                margin-bottom: -20px;
+            }
+
             h2 {
                 font-size: 50px;
                 color: rebeccapurple;
@@ -63,6 +101,7 @@
                 @include mobile {
                     letter-spacing: 5px;
                 }
+
             }
 
             h1 {
@@ -80,6 +119,10 @@
                 line-height: 1.4;
                 margin: 0;
                 font-weight: 300;
+
+                @include tablet {
+                    font-size: 20px;
+                }
             }
 
             .buttons {
@@ -99,6 +142,7 @@
                     position: relative;
                     z-index: 21;
                     pointer-events: auto;
+
 
                     &:hover {
                         background-color: rgba(255, 255, 255, 0.1);
@@ -138,6 +182,19 @@
             flex-shrink: 0;
         }
 
+        @include tablet {
+            position: relative;
+            width: 100%;
+            height: auto;
+            right: auto;
+            order: 2;
+            padding-bottom: 150px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         img {
             width: 450px;
             height: 450px;
@@ -158,6 +215,8 @@
                 width: 250px;
                 height: 250px;
             }
+
+
 
             &::before {
                 content: '';

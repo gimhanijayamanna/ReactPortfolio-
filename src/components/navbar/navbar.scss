@@ -21,6 +21,10 @@
             padding: 20px;
         }
 
+        @include tablet {
+            padding: 50px;
+        }
+
         span {
             font-weight: bold;
             margin-left: 50px;
@@ -40,6 +44,11 @@
                 height: 20px;
                 border-radius: 50%;
                 cursor: pointer;
+
+                @include tablet {
+                    width: 25px;
+                    height: 25px;
+                }
             }
         }
     }

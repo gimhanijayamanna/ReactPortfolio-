@@ -3,6 +3,8 @@ html {
     scroll-behavior: smooth;
     overscroll-behavior: none;
     /* Prevent over-scrolling */
+    width: 100%;
+    height: 100%;
 }
 
 * {
@@ -19,6 +21,10 @@ body {
     /* Prevent over-scrolling */
     overflow-x: hidden;
     /* Prevent horizontal scrolling */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -30,23 +36,41 @@ section {
     height: 100vh;
     scroll-snap-align: start;
     color: #fff;
-
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 @mixin mobile {
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (max-width: 1024px) {
+    @media (min-width: 768px) and (max-width: 1024px) {
         @content;
     }
 }
 
+/* Specific fix for iPad Air/Mini viewport gaps - gentler approach */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    * {
+        max-width: 100%;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 @mixin desktop {
-    @media (min-width: 1365px) {
+    @media (min-width: 1400px) and (max-width: 1199px) {
         @content;
     }
 }

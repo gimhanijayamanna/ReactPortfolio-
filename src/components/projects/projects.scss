@@ -47,6 +47,8 @@
     padding-top: 110px; // navbar space + header
     box-sizing: border-box;
     background: radial-gradient(circle at 25% 25%, #1b1b35, #0c0c1d 70%);
+    width: 100%;
+    max-width: 100%;
 
     .content {
         margin: auto;
@@ -65,6 +67,13 @@
             align-items: center;
         }
 
+        @include tablet {
+            max-width: 100%;
+            width: 100%;
+            padding: 0 30px;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
     }
 
     .imageContainer {
@@ -75,6 +84,13 @@
         @include mobile {
             width: 100%;
             max-height: 300px;
+        }
+
+        @include tablet {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         img {
@@ -99,6 +115,12 @@
             width: 100%;
         }
 
+        @include tablet {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
         h2 {
             font-size: clamp(1.8rem, 3.2vw, 3rem);
             background: linear-gradient(90deg, #ffb347, #ffcc33);
@@ -111,6 +133,11 @@
                 padding: 5px;
                 align-items: center;
                 text-align: center;
+            }
+
+            @include tablet {
+                text-align: center;
+                font-size: 2.2rem;
             }
         }
 
@@ -126,6 +153,13 @@
                 align-items: center;
                 text-align: center;
             }
+
+            @include tablet {
+                text-align: center;
+                margin: 0 auto;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
         }
 
         .meta {
@@ -140,6 +174,13 @@
                 width: 100%;
             }
 
+            @include tablet {
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                font-size: 1rem;
+            }
+
             .label {
                 font-weight: 600;
                 text-transform: uppercase;
@@ -147,6 +188,10 @@
                 font-size: 0.7rem;
                 margin-right: 8px;
                 color: #ffcc66;
+
+                @include tablet {
+                    font-size: 0.8rem;
+                }
             }
 
             .role {
@@ -170,6 +215,12 @@
                     text-align: center;
                 }
 
+                @include tablet {
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                }
+
                 ul {
                     list-style: none;
                     display: flex;
@@ -179,6 +230,10 @@
                     margin: 0;
 
                     @include mobile {
+                        justify-content: center;
+                    }
+
+                    @include tablet {
                         justify-content: center;
                     }
 
@@ -193,6 +248,11 @@
                         backdrop-filter: blur(4px);
                         box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
                         transition: background 0.3s ease, transform 0.3s ease;
+
+                        @include tablet {
+                            font-size: 0.8rem;
+                            padding: 8px 16px;
+                        }
 
 
                     }
@@ -223,6 +283,12 @@
 
             @include mobile {
                 align-self: center;
+            }
+
+            @include tablet {
+                align-self: center;
+                font-size: 1.05rem;
+                padding: 14px 32px;
             }
         }
 

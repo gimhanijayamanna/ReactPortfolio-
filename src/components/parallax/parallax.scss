@@ -31,6 +31,11 @@
             background-size: contain;
             background-repeat: no-repeat;
         }
+
+        @include tablet {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
     }
 
     .stars {
