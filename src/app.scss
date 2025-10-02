@@ -1,3 +1,28 @@
+// Mixin definitions must come first
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin small-mobile {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1400px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
 html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -55,24 +80,6 @@ section {
     }
 }
 
-@mixin mobile {
-    @media (max-width: 767px) {
-        @content;
-    }
-}
-
-@mixin small-mobile {
-    @media (max-width: 480px) {
-        @content;
-    }
-}
-
-@mixin tablet {
-    @media (min-width: 768px) and (max-width: 1024px) {
-        @content;
-    }
-}
-
 /* Specific fix for iPad Air/Mini viewport gaps - gentler approach */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     * {
@@ -86,11 +93,5 @@ section {
         margin-right: 0;
         padding-left: 0;
         padding-right: 0;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: 1400px) and (max-width: 1199px) {
-        @content;
     }
 }
