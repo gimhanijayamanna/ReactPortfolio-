@@ -61,17 +61,10 @@
         align-items: center;
 
         @include mobile {
-            padding: 0 15px;
             flex-direction: column;
             text-align: center;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-        }
-
-        @include small-mobile {
-            padding: 0 10px;
-            gap: 20px;
         }
 
         @include tablet {

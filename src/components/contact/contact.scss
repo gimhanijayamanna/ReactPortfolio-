@@ -15,11 +15,8 @@
 
     @include mobile {
         width: 100%;
-        padding: 15px;
+        padding: 10px;
         flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-        gap: 20px;
     }
 
     @include tablet {
