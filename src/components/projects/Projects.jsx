@@ -27,7 +27,7 @@ const items = [
         title: "Portfolio Website",
         role: "Full Stack Developer, UI Designer",
         technologies: ["React", "Vite", "Framer Motion", "SCSS"],
-        img: "/truck.jpg",
+        img: "/pf.png",
         desc: "Modern portfolio showcasing skills, animations, parallax sections, and responsive design for an engaging user experience.",
         repo: "https://github.com/gimhanijayamanna/ReactPortfolio-"
     },
