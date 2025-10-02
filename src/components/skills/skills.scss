@@ -57,9 +57,10 @@
     /* Center the skills groups */
 
     @include mobile {
-        padding: 0 20px;
+        padding: 0 15px;
         max-width: 100%;
-        margin-bottom: -20px;
+        margin-bottom: -15px;
+        gap: 8px;
     }
 
     @include tablet {
