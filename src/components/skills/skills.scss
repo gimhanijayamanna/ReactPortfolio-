@@ -6,17 +6,56 @@
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    height: 100vh;
     background: linear-gradient(180deg, #0c0c1d, #111132);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow-y: auto;
-    scroll-snap-align: start;
-    padding: 0 20px;
+
+    @include mobile {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 20px;
+    }
+
+    @include mobile-small {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 15px;
+    }
+
+    @include mobile-medium {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 18px;
+    }
+
+    @include mobile-large {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 20px;
+    }
 
     @include tablet {
         padding: 0 20px;
+    }
+}
+
+.skillSlide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .content {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -26,30 +65,41 @@
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    height: 100vh;
     background: linear-gradient(180deg, #0c0c1d, #111132);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow-y: auto;
-    scroll-snap-align: start;
-    padding: 0 20px;
+
+    @include mobile {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 20px;
+    }
+
+    @include mobile-small {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 15px;
+    }
+
+    @include mobile-medium {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 18px;
+    }
+
+    @include mobile-large {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 20px;
+    }
 
     @include tablet {
         padding: 0 20px;
-    }
-}
-
-.skillSlide {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px 0;
-
-    .content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }
 
@@ -65,7 +115,7 @@
     @include mobile {
         padding-top: 80px;
         font-size: 1rem;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     @include mobile-small {
@@ -101,15 +151,27 @@
     /* Center the skills groups */
 
     @include mobile {
-        padding: 0 20px;
+        padding: 0 30px;
         max-width: 100%;
-        margin-bottom: -20px;
+        margin-bottom: 30px;
     }
 
     @include mobile-small {
         padding: 0 10px;
         gap: 8px;
-        margin-bottom: -30px;
+        margin-bottom: 25px;
+    }
+
+    @include mobile-medium {
+        padding: 0 15px;
+        gap: 10px;
+        margin-bottom: 28px;
+    }
+
+    @include mobile-large {
+        padding: 0 20px;
+        gap: 12px;
+        margin-bottom: 35px;
     }
 
     @include tablet {
@@ -307,11 +369,11 @@
 
     @include mobile {
         padding: 0 20px;
-        gap: 15px;
     }
 
     @include mobile-small {
         padding: 0 10px;
+        gap: 4px;
         margin: 8px auto 20px;
     }
 
