@@ -23,6 +23,23 @@
         animation: fadeInDown 1s;
         padding-top: 25px;
         padding-bottom: 25px;
+
+        @include mobile {
+            font-size: 1.8rem; // Reduced from 3rem
+            margin-bottom: 15px; // Reduced from 24px
+            letter-spacing: 1px; // Reduced from 2px
+            padding-top: 15px; // Reduced from 25px
+            padding-bottom: 15px; // Reduced from 25px
+        }
+
+        // Very small mobile screens
+        @media (max-width: 375px) {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
 }
 
@@ -50,6 +67,7 @@
     width: 100%;
     max-width: 100%;
 
+
     .content {
         margin: auto;
         width: 100%;
@@ -65,6 +83,8 @@
             text-align: center;
             justify-content: center;
             align-items: center;
+            padding: 0 15px; // Reduced padding
+            gap: 25px; // Reduced gap
         }
 
         @include tablet {
@@ -83,7 +103,12 @@
 
         @include mobile {
             width: 100%;
-            max-height: 300px;
+            max-height: 200px; // Reduced from 300px
+        }
+
+        // Very small mobile screens
+        @media (max-width: 375px) {
+            max-height: 10px; // Reduced from 200px
         }
 
         @include tablet {
@@ -101,6 +126,19 @@
             border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 32px -8px rgba(0, 0, 0, 0.65);
+
+            @include mobile {
+                max-width: 280px; // Reduced from 320px
+                border-radius: 10px; // Reduced from 12px
+                box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.5); // Further reduced shadow
+            }
+
+            // Very small mobile screens
+            @media (max-width: 375px) {
+                max-width: 200px; // Reduced from 280px
+                border-radius: 8px; // Reduced from 10px
+                box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.45); // Further reduced shadow
+            }
         }
     }
 
@@ -113,6 +151,12 @@
             align-items: center;
             text-align: center;
             width: 100%;
+            gap: 15px; // Reduced from 28px
+        }
+
+        // Very small mobile screens
+        @media (max-width: 375px) {
+            gap: 15px; // Further reduced
         }
 
         @include tablet {
@@ -129,10 +173,15 @@
             color: transparent;
 
             @include mobile {
-                font-size: 1.5rem;
-                padding: 5px;
+                font-size: 1.2rem;
                 align-items: center;
                 text-align: center;
+            }
+
+            // Very small mobile screens
+            @media (max-width: 375px) {
+                font-size: 1.2rem; // Further reduced
+                padding: 3px;
             }
 
             @include tablet {
@@ -154,6 +203,13 @@
                 text-align: center;
             }
 
+            // Very small mobile screens
+            @media (max-width: 375px) {
+                font-size: 0.7rem; // Further reduced
+                padding: 3px;
+                line-height: 1.4; // Reduced line height
+            }
+
             @include tablet {
                 text-align: center;
                 margin: 0 auto;
@@ -172,6 +228,14 @@
                 align-items: center;
                 text-align: center;
                 width: 100%;
+                gap: 10px; // Reduced from 14px
+                font-size: 0.75rem; // Reduced font size
+            }
+
+            // Very small mobile screens
+            @media (max-width: 375px) {
+                gap: 8px; // Further reduced
+                font-size: 0.65rem; // Further reduced
             }
 
             @include tablet {
@@ -191,6 +255,17 @@
 
                 @include tablet {
                     font-size: 0.8rem;
+                }
+
+                @include mobile {
+                    font-size: 0.6rem; // Added mobile specific size
+                    margin-right: 6px; // Reduced margin
+                }
+
+                // Very small mobile screens
+                @media (max-width: 375px) {
+                    font-size: 0.55rem; // Further reduced
+                    margin-right: 4px;
                 }
             }
 
@@ -231,6 +306,12 @@
 
                     @include mobile {
                         justify-content: center;
+                        gap: 6px; // Reduced from 10px
+                    }
+
+                    // Very small mobile screens
+                    @media (max-width: 375px) {
+                        gap: 4px; // Further reduced
                     }
 
                     @include tablet {
@@ -252,6 +333,19 @@
                         @include tablet {
                             font-size: 0.8rem;
                             padding: 8px 16px;
+                        }
+
+                        @include mobile {
+                            font-size: 0.6rem; // Added mobile specific size
+                            padding: 4px 10px; // Reduced padding
+                            border-radius: 30px; // Reduced radius
+                        }
+
+                        // Very small mobile screens
+                        @media (max-width: 375px) {
+                            font-size: 0.5rem; // Further reduced
+                            padding: 3px 8px; // Further reduced
+                            border-radius: 25px;
                         }
 
 
@@ -283,6 +377,16 @@
 
             @include mobile {
                 align-self: center;
+                padding: 10px 20px; // Reduced from 12px 28px
+                font-size: 0.8rem; // Reduced font size
+                border-radius: 30px; // Reduced radius
+            }
+
+            // Very small mobile screens
+            @media (max-width: 375px) {
+                padding: 8px 16px; // Further reduced
+                font-size: 0.7rem; // Further reduced
+                border-radius: 25px;
             }
 
             @include tablet {
@@ -328,6 +432,15 @@
         .content {
             grid-template-columns: 1fr;
             padding: 0 24px;
+        }
+    }
+
+    // Very small mobile screens
+    @media (max-width: 375px) {
+        padding-top: 100px; // Further reduced
+
+        .content {
+            padding: 0 15px; // Further reduced
         }
     }
 }

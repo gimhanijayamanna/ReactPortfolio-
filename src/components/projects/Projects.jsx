@@ -10,7 +10,7 @@ const items = [
         technologies: ["Next.js", "MongoDB", "Tailwind CSS", "Stripe", "JWT", "Google Meet API"],
 
         img: "/mc.jpeg",
-        desc: "A secure online counseling platform connecting clients with licensed counselors through video, messaging, and session bookings, featuring dedicated portals, integrated payments, and role-based access control.",
+        desc: "Secure online counseling platform connecting clients and counselors through video, chat, and bookings with integrated payments.",
         repo: "https://github.com/gimhanijayamanna/MindfullConnect"
     },
     {

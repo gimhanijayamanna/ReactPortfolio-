@@ -15,8 +15,23 @@
 
     @include mobile {
         width: 100%;
-        padding: 10px;
+        padding: 10px 10px;
         flex-direction: column;
+    }
+
+    @include mobile-small {
+        padding: 5px 8px;
+        gap: 15px;
+    }
+
+    @include mobile-medium {
+        padding: 8px 10px;
+        gap: 20px;
+    }
+
+    @include mobile-large {
+        padding: 10px 15px;
+        gap: 25px;
     }
 
     @include tablet {
@@ -39,11 +54,29 @@
         gap: 30px;
 
         @include mobile {
-            gap: 20px;
+            gap: 5px;
             text-align: center;
             align-items: center;
             margin-top: 80px;
-            margin-bottom: -30px;
+            margin-bottom: -5px;
+        }
+
+        @include mobile-small {
+            gap: 3px;
+            margin-top: 60px;
+            margin-bottom: -10px;
+        }
+
+        @include mobile-medium {
+            gap: 4px;
+            margin-top: 150px;
+            margin-bottom: -8px;
+        }
+
+        @include mobile-large {
+            gap: 20px;
+            margin-top: 100px;
+            margin-bottom: -3px;
         }
 
         @include tablet {
@@ -59,7 +92,22 @@
             line-height: 88px;
 
             @include mobile {
+                font-size: 25px;
+            }
+
+            @include mobile-small {
+                font-size: 20px;
+                line-height: 22px;
+            }
+
+            @include mobile-medium {
+                font-size: 22px;
+                line-height: 24px;
+            }
+
+            @include mobile-large {
                 font-size: 30px;
+                line-height: 28px;
             }
 
             @include tablet {
@@ -68,9 +116,37 @@
             }
         }
 
+        h2 {
+            font-size: 18px;
+
+            @include mobile-small {
+                font-size: 14px;
+            }
+
+            @include mobile-medium {
+                font-size: 15px;
+            }
+
+            @include mobile-large {
+                font-size: 16px;
+            }
+        }
+
         span {
             font-weight: 250;
             color: #ffcc66;
+
+            @include mobile-small {
+                font-size: 0.8rem;
+            }
+
+            @include mobile-medium {
+                font-size: 0.9rem;
+            }
+
+            @include mobile-large {
+                font-size: 1rem;
+            }
 
             @include tablet {
                 font-size: 1.4rem;
@@ -85,6 +161,19 @@
         @include mobile {
             padding: 30px;
             width: 100%;
+
+        }
+
+        @include mobile-small {
+            padding: 15px;
+        }
+
+        @include mobile-medium {
+            padding: 20px;
+        }
+
+        @include mobile-large {
+            padding: 25px;
         }
 
         @include tablet {
@@ -114,10 +203,22 @@
         form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
+
+            @include mobile-small {
+                gap: 10px;
+            }
+
+            @include mobile-medium {
+                gap: 12px;
+            }
+
+            @include mobile-large {
+                gap: 15px;
+            }
 
             @include tablet {
-                gap: 35px;
+                gap: 20px;
                 max-width: 600px;
                 width: 100%;
             }
@@ -134,9 +235,47 @@
                     padding: 10px;
                 }
 
+                @include mobile-small {
+                    padding: 8px;
+                    font-size: 0.85rem;
+                }
+
+                @include mobile-medium {
+                    padding: 9px;
+                    font-size: 0.9rem;
+                }
+
+                @include mobile-large {
+                    padding: 10px;
+                    font-size: 0.95rem;
+                }
+
                 @include tablet {
                     padding: 25px;
                     font-size: 1rem;
+                }
+            }
+
+            textarea {
+                @include mobile {
+                    height: 80px;
+                    resize: vertical;
+                }
+
+                @include mobile-small {
+                    height: 60px;
+                }
+
+                @include mobile-medium {
+                    height: 70px;
+                }
+
+                @include mobile-large {
+                    height: 85px;
+                }
+
+                @include tablet {
+                    height: 120px;
                 }
             }
 
@@ -149,6 +288,21 @@
 
                 @include mobile {
                     padding: 10px;
+                }
+
+                @include mobile-small {
+                    padding: 8px;
+                    font-size: 0.85rem;
+                }
+
+                @include mobile-medium {
+                    padding: 9px;
+                    font-size: 0.9rem;
+                }
+
+                @include mobile-large {
+                    padding: 10px;
+                    font-size: 0.95rem;
                 }
 
                 @include tablet {

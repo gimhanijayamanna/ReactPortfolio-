@@ -1,18 +1,55 @@
 @import "../../app.scss";
 
+.skillsGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    height: 100vh;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scroll-snap-align: start;
+    padding: 0 20px;
+
+    @include tablet {
+        padding: 0 20px;
+    }
+}
+
 .skills-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(180deg, #0c0c1d, #111132);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    overflow-y: auto;
+    scroll-snap-align: start;
+    padding: 0 20px;
 
     @include tablet {
         padding: 0 20px;
+    }
+}
+
+.skillSlide {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 0;
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -28,7 +65,14 @@
     @include mobile {
         padding-top: 80px;
         font-size: 1rem;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    @include mobile-small {
+        padding-top: 40px;
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
     }
 
     @include tablet {
@@ -52,7 +96,7 @@
     max-width: 880px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     margin: 0 auto;
     /* Center the skills groups */
 
@@ -60,6 +104,12 @@
         padding: 0 20px;
         max-width: 100%;
         margin-bottom: -20px;
+    }
+
+    @include mobile-small {
+        padding: 0 10px;
+        gap: 8px;
+        margin-bottom: -30px;
     }
 
     @include tablet {
@@ -90,6 +140,15 @@
     box-shadow: 0 4px 18px -6px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
 
+    @include mobile-small {
+        padding: 6px 8px;
+        gap: 4px;
+        border-radius: 8px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     @include tablet {
         flex-direction: column;
         align-items: center;
@@ -115,6 +174,14 @@
     display: flex;
     align-items: center;
 
+    @include mobile-small {
+        flex: initial;
+        justify-content: center;
+        font-size: 0.55rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+    }
+
     @include tablet {
         flex: initial;
         justify-content: center;
@@ -137,6 +204,11 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-start;
+
+    @include mobile-small {
+        justify-content: center;
+        gap: 4px;
+    }
 
     @include tablet {
         justify-content: center;
@@ -162,6 +234,13 @@
     transition: background 0.3s ease, transform 0.3s ease;
     opacity: 0;
     animation: fadeInSkill 0.8s forwards;
+
+    @include mobile-small {
+        padding: 2px 6px;
+        font-size: 0.55rem;
+        border-radius: 20px;
+        letter-spacing: 0.2px;
+    }
 
     @include tablet {
         padding: 6px 20px;
@@ -228,6 +307,12 @@
 
     @include mobile {
         padding: 0 20px;
+        gap: 15px;
+    }
+
+    @include mobile-small {
+        padding: 0 10px;
+        margin: 8px auto 20px;
     }
 
     @include tablet {
@@ -258,7 +343,7 @@
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
     @include mobile {
-        padding: 6px 14px;
+        padding: 4px 14px;
         background: linear-gradient(135deg, rgba(255, 179, 71, 0.25), rgba(255, 140, 0, 0.15));
         border: 1px solid rgba(255, 200, 120, 0.25);
         border-radius: 40px;
@@ -270,6 +355,13 @@
         transition: background 0.3s ease, transform 0.3s ease;
         opacity: 0;
         animation: fadeInSkill 0.8s forwards;
+    }
+
+    @include mobile-small {
+        padding: 3px 8px;
+        font-size: 0.55rem;
+        border-radius: 20px;
+        letter-spacing: 0.2px;
     }
 
     @include tablet {

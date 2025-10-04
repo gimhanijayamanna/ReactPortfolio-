@@ -47,6 +47,24 @@ section {
     }
 }
 
+@mixin mobile-small {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin mobile-medium {
+    @media (min-width: 376px) and (max-width: 413px) {
+        @content;
+    }
+}
+
+@mixin mobile-large {
+    @media (min-width: 414px) and (max-width: 767px) {
+        @content;
+    }
+}
+
 @mixin tablet {
     @media (min-width: 768px) and (max-width: 1024px) {
         @content;

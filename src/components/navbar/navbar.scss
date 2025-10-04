@@ -18,7 +18,7 @@
 
         @include mobile {
             justify-content: flex-end;
-            padding: 20px;
+            padding: 25px;
         }
 
         @include tablet {
@@ -44,6 +44,11 @@
                 height: 20px;
                 border-radius: 50%;
                 cursor: pointer;
+
+                @include mobile {
+                    width: 16px;
+                    height: 16px;
+                }
 
                 @include tablet {
                     width: 25px;

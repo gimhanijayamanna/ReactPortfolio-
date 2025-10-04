@@ -39,16 +39,28 @@
         z-index: 10;
 
         @include mobile {
-            padding: 25px;
+            padding: 15px; // Reduced from 25px
             margin-left: 0;
-            margin-top: 60px; // Reduced from 100px to fit content better
-            height: auto;
+            margin-top: 60px; // Reduced from 80px
+
             width: 100%;
             order: 1; // Wrapper comes first
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        // Smaller mobile screens (iPhone SE, small phones)
+        @media (max-width: 375px) {
+            padding: 12px;
+            margin-top: 40px;
+        }
+
+        // Larger mobile screens (iPhone Plus, large phones)
+        @media (min-width: 414px) and (max-width: 767px) {
+            padding: 18px;
+            margin-top: 70px;
         }
 
         @include tablet {
@@ -63,6 +75,18 @@
             justify-content: center;
             height: 100%;
             gap: 20px;
+        }
+
+        // Smaller tablets (iPad Mini, small tablets)
+        @media (min-width: 768px) and (max-width: 900px) {
+            padding: 0 25px;
+            gap: 15px;
+        }
+
+        // Larger tablets (iPad Pro, large tablets)
+        @media (min-width: 1024px) and (max-width: 1366px) {
+            padding: 0 40px;
+            gap: 30px;
         }
 
         .textContainer {
@@ -81,6 +105,16 @@
                 text-align: center;
             }
 
+            // Smaller mobile screens - tighter spacing
+            @media (max-width: 375px) {
+                gap: 15px;
+            }
+
+            // Larger mobile screens - more breathing room
+            @media (min-width: 414px) and (max-width: 767px) {
+                gap: 25px;
+            }
+
             @include tablet {
                 width: 100%;
                 height: auto;
@@ -93,14 +127,59 @@
                 margin-bottom: -20px;
             }
 
+            // Smaller tablets - more compact layout
+            @media (min-width: 768px) and (max-width: 900px) {
+                gap: 15px;
+                margin-top: 80px;
+                padding: 40px;
+                margin-bottom: -10px;
+            }
+
+            // Larger tablets - more spacious layout
+            @media (min-width: 1024px) and (max-width: 1366px) {
+                gap: 25px;
+                margin-top: 120px;
+                padding: 60px;
+                margin-bottom: -30px;
+            }
+
             h2 {
                 font-size: 50px;
                 color: rebeccapurple;
                 letter-spacing: 10px;
 
                 @include mobile {
-                    letter-spacing: 5px;
-                    font-size: 35px;
+                    letter-spacing: 3px; // Reduced from 5px
+                    font-size: 28px; // Reduced from 35px
+                    margin-bottom: 8px;
+                }
+
+                // Add styles for very small screens
+                @media (max-width: 375px) {
+                    font-size: 22px;
+                    letter-spacing: 2px;
+                    margin-bottom: 6px;
+                }
+
+                // Add styles for larger mobile screens
+                @media (min-width: 414px) and (max-width: 767px) {
+                    font-size: 32px;
+                    letter-spacing: 4px;
+                    margin-bottom: 10px;
+                }
+
+                // Smaller tablets - moderate size
+                @media (min-width: 768px) and (max-width: 900px) {
+                    font-size: 38px;
+                    letter-spacing: 6px;
+                    margin-bottom: 12px;
+                }
+
+                // Larger tablets - bigger size
+                @media (min-width: 1024px) and (max-width: 1366px) {
+                    font-size: 45px;
+                    letter-spacing: 8px;
+                    margin-bottom: 15px;
                 }
 
             }
@@ -109,8 +188,32 @@
                 font-size: 35px;
 
                 @include mobile {
-                    font-size: 25px;
+                    font-size: 20px; // Reduced from 25px
+                    margin-bottom: 6px;
+                }
 
+                // Add styles for very small screens
+                @media (max-width: 375px) {
+                    font-size: 16px;
+                    margin-bottom: 4px;
+                }
+
+                // Add styles for larger mobile screens
+                @media (min-width: 414px) and (max-width: 767px) {
+                    font-size: 24px;
+                    margin-bottom: 8px;
+                }
+
+                // Smaller tablets - moderate size
+                @media (min-width: 768px) and (max-width: 900px) {
+                    font-size: 28px;
+                    margin-bottom: 10px;
+                }
+
+                // Larger tablets - bigger size
+                @media (min-width: 1024px) and (max-width: 1366px) {
+                    font-size: 32px;
+                    margin-bottom: 12px;
                 }
             }
 
@@ -121,8 +224,38 @@
                 margin: 0;
                 font-weight: 300;
 
+                @include mobile {
+                    font-size: 14px; // Reduced for mobile
+                    line-height: 1.5;
+                    margin-bottom: 8px;
+                }
+
                 @include tablet {
                     font-size: 20px;
+                }
+
+                // Add styles for very small screens
+                @media (max-width: 375px) {
+                    font-size: 12px;
+                    margin-bottom: 6px;
+                }
+
+                // Add styles for larger mobile screens
+                @media (min-width: 414px) and (max-width: 767px) {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+
+                // Smaller tablets - moderate size
+                @media (min-width: 768px) and (max-width: 900px) {
+                    font-size: 18px;
+                    margin-bottom: 12px;
+                }
+
+                // Larger tablets - bigger size
+                @media (min-width: 1024px) and (max-width: 1366px) {
+                    font-size: 22px;
+                    margin-bottom: 15px;
                 }
             }
 
@@ -152,9 +285,42 @@
                     pointer-events: auto;
 
                     @include mobile {
-                        margin-right: 10px;
-                        margin-left: 10px;
-                        padding: 15px;
+                        margin-right: 6px; // Reduced from 10px
+                        margin-left: 6px;
+                        padding: 10px 14px; // Reduced from 15px
+                        font-size: 13px; // Added smaller font size
+                    }
+
+                    // Add styles for very small screens
+                    @media (max-width: 375px) {
+                        padding: 8px 10px;
+                        font-size: 11px;
+                        margin-right: 3px;
+                        margin-left: 3px;
+                    }
+
+                    // Add styles for larger mobile screens
+                    @media (min-width: 414px) and (max-width: 767px) {
+                        padding: 12px 16px;
+                        font-size: 14px;
+                        margin-right: 8px;
+                        margin-left: 8px;
+                    }
+
+                    // Smaller tablets - moderate button size
+                    @media (min-width: 768px) and (max-width: 900px) {
+                        padding: 15px 20px;
+                        font-size: 16px;
+                        margin-right: 12px;
+                        margin-left: 12px;
+                    }
+
+                    // Larger tablets - bigger buttons
+                    @media (min-width: 1024px) and (max-width: 1366px) {
+                        padding: 18px 24px;
+                        font-size: 17px;
+                        margin-right: 15px;
+                        margin-left: 15px;
                     }
 
 
@@ -192,8 +358,19 @@
             top: auto;
             right: auto;
             order: 2;
-            padding-bottom: 50px; // Reduced from 100px to prevent overflow
+            padding-bottom: 80px; // Reduced from 100px to prevent overflow
             flex-shrink: 0;
+            // Move image container up
+        }
+
+        // Smaller mobile screens - reduced padding
+        @media (max-width: 375px) {
+            padding-bottom: 60px;
+        }
+
+        // Larger mobile screens - more padding
+        @media (min-width: 414px) and (max-width: 767px) {
+            padding-bottom: 100px;
         }
 
         @include tablet {
@@ -207,6 +384,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        // Smaller tablets - reduced padding
+        @media (min-width: 768px) and (max-width: 900px) {
+            padding-bottom: 120px;
+        }
+
+        // Larger tablets - more padding
+        @media (min-width: 1024px) and (max-width: 1366px) {
+            padding-bottom: 180px;
         }
 
         img {
@@ -226,8 +413,38 @@
             position: relative;
 
             @include mobile {
-                width: 250px;
-                height: 250px;
+                width: 160px; // Reduced from 200px
+                height: 160px;
+            }
+
+            // Add styles for very small screens
+            @media (max-width: 375px) {
+                width: 130px;
+                height: 130px;
+            }
+
+            // Add styles for larger mobile screens
+            @media (min-width: 414px) and (max-width: 767px) {
+                width: 190px;
+                height: 190px;
+            }
+
+            // Medium mobile screens (iPhone 12/13/14 standard)
+            @media (min-width: 376px) and (max-width: 413px) {
+                width: 160px;
+                height: 160px;
+            }
+
+            // Smaller tablets - moderate image size
+            @media (min-width: 768px) and (max-width: 900px) {
+                width: 280px;
+                height: 280px;
+            }
+
+            // Larger tablets - bigger image size
+            @media (min-width: 1024px) and (max-width: 1366px) {
+                width: 350px;
+                height: 350px;
             }
 
 
