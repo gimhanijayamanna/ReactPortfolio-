@@ -10,6 +10,7 @@
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    scroll-snap-align: start;
 
     @include mobile {
         height: 100vh;
@@ -18,29 +19,14 @@
         padding-bottom: 20px;
     }
 
-    @include mobile-small {
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: 15px;
-    }
-
-    @include mobile-medium {
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: 18px;
-    }
-
-    @include mobile-large {
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: 20px;
-    }
-
     @include tablet {
         padding: 0 20px;
+        overflow-y: auto;
+    }
+
+    @include desktop {
+        min-height: 100vh;
+        overflow-y: visible;
     }
 }
 
@@ -56,136 +42,115 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-}
-
-.skills-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    background: linear-gradient(180deg, #0c0c1d, #111132);
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-
-    @include mobile {
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: 20px;
-    }
-
-    @include mobile-small {
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: 15px;
-    }
-
-    @include mobile-medium {
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: 18px;
-    }
-
-    @include mobile-large {
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: 20px;
-    }
-
-    @include tablet {
         padding: 0 20px;
+
+        @include mobile {
+            padding: 0 15px;
+        }
+
+        @include tablet {
+            padding: 0 30px;
+        }
+
+        @include desktop {
+            padding: 0 40px;
+        }
     }
 }
 
 .skills-subtitle {
-    padding-top: 55px;
-    font-size: 1.55rem;
+    padding-top: clamp(40px, 8vh, 80px);
+    font-size: clamp(0.9rem, 4vw, 2rem);
     color: #ffcc66;
     text-align: center;
     animation: fadeInDown 1.2s;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
+    letter-spacing: clamp(0.5px, 0.2vw, 2px);
+    margin-bottom: clamp(15px, 4vh, 35px);
+    font-weight: 600;
 
-    @include mobile {
-        padding-top: 80px;
-        font-size: 1rem;
-        margin-bottom: 10px;
+    @include mobile-xs {
+        padding-top: 50px;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
     }
 
     @include mobile-small {
-        padding-top: 40px;
-        font-size: 0.85rem;
-        margin-bottom: 8px;
-        letter-spacing: 0.5px;
-    }
-
-    @include tablet {
-        padding-top: 80px;
-        font-size: 1.2rem;
+        padding-top: 55px;
+        font-size: 0.95rem;
         margin-bottom: 15px;
     }
 
-    /* iPad Pro specific - larger font */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        font-size: 1.6rem;
-        padding-top: 80px;
-        margin-bottom: 30px;
-        letter-spacing: 1.5px;
-    }
-}
-
-/* New vertical list layout for technical skills */
-.skills-groups {
-    width: 100%;
-    max-width: 880px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 0 auto;
-    /* Center the skills groups */
-
-    @include mobile {
-        padding: 0 30px;
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    @include mobile-small {
-        padding: 0 10px;
-        gap: 8px;
-        margin-bottom: 25px;
-    }
-
     @include mobile-medium {
-        padding: 0 15px;
-        gap: 10px;
-        margin-bottom: 28px;
+        padding-top: 60px;
+        font-size: 1.05rem;
+        margin-bottom: 18px;
     }
 
     @include mobile-large {
-        padding: 0 20px;
-        gap: 12px;
+        padding-top: 70px;
+        font-size: 1.15rem;
+        margin-bottom: 20px;
+    }
+
+    @include tablet-small {
+        padding-top: 75px;
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+
+    @include tablet-large {
+        padding-top: 80px;
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
+    @include desktop-small {
+        padding-top: 70px;
+        font-size: 1.7rem;
+        margin-bottom: 32px;
+    }
+
+    @include desktop-medium {
+        padding-top: 75px;
+        font-size: 1.8rem;
         margin-bottom: 35px;
     }
 
-    @include tablet {
-        padding: 0 50px;
-        max-width: 100%;
-        margin-bottom: -10px;
-        gap: 12px;
+    @include desktop-large {
+        padding-top: 80px;
+        font-size: 1.9rem;
+        margin-bottom: 38px;
     }
 
-    /* iPad Pro specific - more padding and spacing */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        padding: 0 90px;
-        gap: 18px;
-        margin-bottom: -10px;
+    @include desktop-xxl {
+        padding-top: 85px;
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+}
+
+/* Enhanced technical skills layout */
+.skills-groups {
+    width: 100%;
+    max-width: clamp(300px, 90vw, 1100px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 2vw, 18px);
+    margin: 0 auto;
+
+    @include mobile {
+        padding: 0 15px;
+        margin-bottom: 25px;
+    }
+
+    @include tablet {
+        padding: 0 30px;
+        margin-bottom: 30px;
+    }
+
+    @include desktop {
+        padding: 0;
+        margin-bottom: 35px;
     }
 }
 
@@ -193,70 +158,79 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    /* vertically center category with pills */
-    gap: 8px;
-    padding: 10px 15px;
-    background: linear-gradient(135deg, rgba(49, 35, 58, 0.45) 0%, rgba(16, 53, 82, 0.35) 60%, rgba(26, 26, 46, 0.5) 100%);
+    gap: clamp(6px, 1.5vw, 12px);
+    padding: clamp(8px, 2vw, 16px);
+    background: linear-gradient(135deg,
+            rgba(49, 35, 58, 0.45) 0%,
+            rgba(16, 53, 82, 0.35) 60%,
+            rgba(26, 26, 46, 0.5) 100%);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
+    border-radius: clamp(8px, 2vw, 16px);
     box-shadow: 0 4px 18px -6px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
 
-    @include mobile-small {
-        padding: 6px 8px;
-        gap: 4px;
-        border-radius: 8px;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.7);
+        background: linear-gradient(135deg,
+                rgba(49, 35, 58, 0.55) 0%,
+                rgba(16, 53, 82, 0.45) 60%,
+                rgba(26, 26, 46, 0.6) 100%);
+    }
+
+    @include mobile {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px 12px;
+        gap: 8px;
     }
 
     @include tablet {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 12px 18px;
+        padding: 14px 18px;
         gap: 10px;
     }
 
-    /* iPad Pro specific - more padding */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        padding: 16px 24px;
-        gap: 14px;
-        border-radius: 16px;
+    @include desktop {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 16px 20px;
+        gap: 12px;
     }
 }
 
 .skill-category {
-    flex: 0 0 250px;
     font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 0.7rem;
+    letter-spacing: clamp(0.5px, 0.1vw, 1.2px);
+    font-size: clamp(0.55rem, 1.8vw, 0.85rem);
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
+    color: #ffcc66;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
-    @include mobile-small {
-        flex: initial;
-        justify-content: center;
-        font-size: 0.55rem;
-        letter-spacing: 0.5px;
-        margin-bottom: 4px;
+    @include mobile {
+        flex: none;
+        text-align: center;
+        margin-bottom: 6px;
+        min-width: auto;
     }
 
     @include tablet {
-        flex: initial;
-        justify-content: center;
-        font-size: 0.8rem;
+        flex: none;
+        text-align: center;
+        margin-bottom: 8px;
     }
 
-    /* iPad Pro specific - larger font */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        font-size: 1.0rem;
-        letter-spacing: 1.2px;
+    @include desktop {
+        flex: 0 0 clamp(200px, 20vw, 280px);
+        text-align: left;
+        margin-bottom: 0;
     }
 }
-
 
 .skill-list {
     list-style: none;
@@ -264,206 +238,144 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start;
+    gap: clamp(4px, 1vw, 12px);
+    justify-content: center;
 
-    @include mobile-small {
-        justify-content: center;
-        gap: 4px;
-    }
-
-    @include tablet {
-        justify-content: center;
-        gap: 12px;
-    }
-
-    /* iPad Pro specific - more spacing */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        gap: 16px;
+    @include desktop {
+        justify-content: flex-start;
     }
 }
 
 .skill-item {
-    padding: 5px 10px;
+    padding: clamp(3px, 1vw, 8px) clamp(6px, 2vw, 16px);
     background: linear-gradient(135deg, rgba(255, 179, 71, 0.25), rgba(255, 140, 0, 0.15));
     border: 1px solid rgba(255, 200, 120, 0.25);
-    border-radius: 40px;
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
+    border-radius: clamp(20px, 5vw, 40px);
+    font-size: clamp(0.5rem, 1.8vw, 0.75rem);
+    font-weight: 500;
+    letter-spacing: 0.3px;
     color: #ffe2b0;
     backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
-    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
     opacity: 0;
     animation: fadeInSkill 0.8s forwards;
+    white-space: nowrap;
+
+    &:hover {
+        background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    }
+
+    @include mobile-xs {
+        padding: 2px 4px;
+        font-size: 0.45rem;
+        border-radius: 15px;
+    }
 
     @include mobile-small {
-        padding: 2px 6px;
-        font-size: 0.55rem;
-        border-radius: 20px;
-        letter-spacing: 0.2px;
+        padding: 3px 6px;
+        font-size: 0.5rem;
+        border-radius: 18px;
     }
 
     @include tablet {
-        padding: 6px 20px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        border-radius: 25px;
+    }
+
+    @include desktop {
+        padding: 8px 16px;
         font-size: 0.75rem;
-    }
-
-    /* iPad Pro specific - larger font */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        padding: 10px 28px;
-        font-size: 0.95rem;
-        border-radius: 45px;
+        border-radius: 30px;
     }
 }
 
-.skill-item:hover {
-    background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
-    transform: translateY(-3px);
-}
-
-/* Responsive: stack category above pills on narrow screens for better centering */
-@media (max-width: 700px) {
-    .skill-row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .skill-category {
-        flex: initial;
-        justify-content: center;
-    }
-
-    .skill-list {
-        justify-content: center;
-    }
-}
-
-/* Apply mobile layout to all tablet sizes but with scaling */
-@include tablet {
-    .skill-row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .skill-category {
-        flex: initial;
-        justify-content: center;
-    }
-
-    .skill-list {
-        justify-content: center;
-    }
-}
-
-/* Soft skills now reuse pill concept */
+/* Enhanced soft skills section */
 .soft-skills-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: clamp(6px, 2vw, 16px);
     justify-content: center;
     max-width: 100%;
-    margin: 10px auto 50px;
-
-    @include mobile {
-        padding: 0 20px;
-    }
-
-    @include mobile-small {
-        padding: 0 10px;
-        gap: 4px;
-        margin: 8px auto 20px;
-    }
-
-    @include tablet {
-        padding: 0 50px;
-    }
-
-    /* iPad Pro specific - more padding */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        padding: 0 80px;
-        gap: 14px;
-        margin: 15px auto 60px;
-    }
+    margin: clamp(15px, 4vh, 40px) auto clamp(30px, 8vh, 80px);
+    padding: 0 clamp(10px, 3vw, 30px);
 }
 
 .soft-skill-pill {
-    /* Increased size specifically for soft skill pills per request */
-    padding: 11px 26px;
+    padding: clamp(6px, 2vw, 12px) clamp(12px, 4vw, 28px);
     background: linear-gradient(135deg, rgba(255, 179, 71, 0.25), rgba(255, 140, 0, 0.15));
     border: 1px solid rgba(255, 200, 120, 0.25);
-    border-radius: 50px;
-    font-size: 0.82rem;
-    letter-spacing: 0.5px;
+    border-radius: clamp(25px, 6vw, 50px);
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    font-weight: 500;
+    letter-spacing: 0.3px;
     color: #ffe2b0;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInSkill 0.8s forwards;
+    white-space: nowrap;
 
-    @include mobile {
-        padding: 4px 14px;
-        background: linear-gradient(135deg, rgba(255, 179, 71, 0.25), rgba(255, 140, 0, 0.15));
-        border: 1px solid rgba(255, 200, 120, 0.25);
-        border-radius: 40px;
-        font-size: 0.7rem;
-        letter-spacing: 0.5px;
-        color: #ffe2b0;
-        backdrop-filter: blur(4px);
-        box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
-        transition: background 0.3s ease, transform 0.3s ease;
-        opacity: 0;
-        animation: fadeInSkill 0.8s forwards;
+    &:hover {
+        background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.55);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+
+    @include mobile-xs {
+        padding: 4px 8px;
+        font-size: 0.5rem;
+        border-radius: 20px;
     }
 
     @include mobile-small {
-        padding: 3px 8px;
+        padding: 5px 10px;
         font-size: 0.55rem;
-        border-radius: 20px;
-        letter-spacing: 0.2px;
+        border-radius: 22px;
     }
 
     @include tablet {
         padding: 8px 16px;
-        font-size: 0.8rem;
-        opacity: 0;
-        animation: fadeInSkill 0.8s forwards;
+        font-size: 0.75rem;
+        border-radius: 30px;
     }
 
-    /* iPad Pro specific - larger font */
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
+    @include desktop {
         padding: 10px 20px;
-        font-size: 0.9rem;
-        opacity: 0;
-        animation: fadeInSkill 0.8s forwards;
+        font-size: 0.85rem;
+        border-radius: 35px;
     }
 }
 
-.soft-skill-pill:hover {
-    background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.55);
-}
-
+/* Enhanced animations */
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(-30px);
     }
 
     to {
@@ -475,39 +387,60 @@
 @keyframes fadeInSkill {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px) scale(0.95);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
+/* Staggered animation delays */
 .skill-item:nth-child(1) {
     animation-delay: 0.1s;
 }
 
 .skill-item:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 .skill-item:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .skill-item:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 0.25s;
 }
 
 .skill-item:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
 
 .skill-item:nth-child(6) {
-    animation-delay: 0.6s;
+    animation-delay: 0.35s;
 }
 
 .skill-item:nth-child(7) {
-    animation-delay: 0.7s;
+    animation-delay: 0.4s;
+}
+
+.soft-skill-pill:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.soft-skill-pill:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.soft-skill-pill:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.soft-skill-pill:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.soft-skill-pill:nth-child(5) {
+    animation-delay: 0.5s;
 }

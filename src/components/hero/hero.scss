@@ -30,6 +30,38 @@
         justify-content: center;
     }
 
+    // Desktop small (up to 1399px)
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+
+    // Desktop medium (1400px - 1599px)
+    @media (min-width: 1400px) and (max-width: 1599px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 60px;
+    }
+
+    // Desktop large (1600px - 1919px)
+    @media (min-width: 1600px) and (max-width: 1919px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 80px;
+    }
+
+    // Desktop extra large (1920px+)
+    @media (min-width: 1920px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 120px;
+    }
+
     .wrapper {
         max-width: 1366px;
         height: 100%;
@@ -89,6 +121,38 @@
             gap: 30px;
         }
 
+        // Desktop small (up to 1399px)
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            max-width: 1200px;
+            margin-left: 80px;
+            padding: 0;
+            gap: 35px;
+        }
+
+        // Desktop medium (1400px - 1599px)
+        @media (min-width: 1400px) and (max-width: 1599px) {
+            max-width: 1300px;
+            margin-left: 100px;
+            padding: 0;
+            gap: 40px;
+        }
+
+        // Desktop large (1600px - 1919px)
+        @media (min-width: 1600px) and (max-width: 1919px) {
+            max-width: 1400px;
+            margin-left: 120px;
+            padding: 0;
+            gap: 45px;
+        }
+
+        // Desktop extra large (1920px+)
+        @media (min-width: 1920px) {
+            max-width: 1500px;
+            margin-left: 150px;
+            padding: 0;
+            gap: 50px;
+        }
+
         .textContainer {
             width: 50%;
             height: 100%;
@@ -143,6 +207,42 @@
                 margin-bottom: -30px;
             }
 
+            // Desktop small (up to 1399px)
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                width: 55%;
+                gap: 35px;
+                margin-top: 0;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            // Desktop medium (1400px - 1599px)
+            @media (min-width: 1400px) and (max-width: 1599px) {
+                width: 55%;
+                gap: 40px;
+                margin-top: 0;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            // Desktop large (1600px - 1919px)
+            @media (min-width: 1600px) and (max-width: 1919px) {
+                width: 55%;
+                gap: 45px;
+                margin-top: 0;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            // Desktop extra large (1920px+)
+            @media (min-width: 1920px) {
+                width: 55%;
+                gap: 50px;
+                margin-top: 0;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
             h2 {
                 font-size: 50px;
                 color: rebeccapurple;
@@ -182,6 +282,34 @@
                     margin-bottom: 15px;
                 }
 
+                // Desktop small (up to 1399px)
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 52px;
+                    letter-spacing: 10px;
+                    margin-bottom: 20px;
+                }
+
+                // Desktop medium (1400px - 1599px)
+                @media (min-width: 1400px) and (max-width: 1599px) {
+                    font-size: 56px;
+                    letter-spacing: 12px;
+                    margin-bottom: 22px;
+                }
+
+                // Desktop large (1600px - 1919px)
+                @media (min-width: 1600px) and (max-width: 1919px) {
+                    font-size: 60px;
+                    letter-spacing: 14px;
+                    margin-bottom: 25px;
+                }
+
+                // Desktop extra large (1920px+)
+                @media (min-width: 1920px) {
+                    font-size: 65px;
+                    letter-spacing: 16px;
+                    margin-bottom: 30px;
+                }
+
             }
 
             h1 {
@@ -214,6 +342,30 @@
                 @media (min-width: 1024px) and (max-width: 1366px) {
                     font-size: 32px;
                     margin-bottom: 12px;
+                }
+
+                // Desktop small (up to 1399px)
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 38px;
+                    margin-bottom: 15px;
+                }
+
+                // Desktop medium (1400px - 1599px)
+                @media (min-width: 1400px) and (max-width: 1599px) {
+                    font-size: 42px;
+                    margin-bottom: 18px;
+                }
+
+                // Desktop large (1600px - 1919px)
+                @media (min-width: 1600px) and (max-width: 1919px) {
+                    font-size: 46px;
+                    margin-bottom: 20px;
+                }
+
+                // Desktop extra large (1920px+)
+                @media (min-width: 1920px) {
+                    font-size: 50px;
+                    margin-bottom: 25px;
                 }
             }
 
@@ -256,6 +408,30 @@
                 @media (min-width: 1024px) and (max-width: 1366px) {
                     font-size: 22px;
                     margin-bottom: 15px;
+                }
+
+                // Desktop small (up to 1399px)
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 20px;
+                    margin-bottom: 18px;
+                }
+
+                // Desktop medium (1400px - 1599px)
+                @media (min-width: 1400px) and (max-width: 1599px) {
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                }
+
+                // Desktop large (1600px - 1919px)
+                @media (min-width: 1600px) and (max-width: 1919px) {
+                    font-size: 24px;
+                    margin-bottom: 22px;
+                }
+
+                // Desktop extra large (1920px+)
+                @media (min-width: 1920px) {
+                    font-size: 26px;
+                    margin-bottom: 25px;
                 }
             }
 
@@ -321,6 +497,38 @@
                         font-size: 17px;
                         margin-right: 15px;
                         margin-left: 15px;
+                    }
+
+                    // Desktop small (up to 1399px)
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        padding: 20px 30px;
+                        font-size: 16px;
+                        margin-right: 20px;
+                        margin-left: 0;
+                    }
+
+                    // Desktop medium (1400px - 1599px)
+                    @media (min-width: 1400px) and (max-width: 1599px) {
+                        padding: 22px 32px;
+                        font-size: 17px;
+                        margin-right: 25px;
+                        margin-left: 0;
+                    }
+
+                    // Desktop large (1600px - 1919px)
+                    @media (min-width: 1600px) and (max-width: 1919px) {
+                        padding: 24px 36px;
+                        font-size: 18px;
+                        margin-right: 30px;
+                        margin-left: 0;
+                    }
+
+                    // Desktop extra large (1920px+)
+                    @media (min-width: 1920px) {
+                        padding: 25px 40px;
+                        font-size: 19px;
+                        margin-right: 35px;
+                        margin-left: 0;
                     }
 
 
@@ -396,6 +604,46 @@
             padding-bottom: 180px;
         }
 
+        // Desktop small (up to 1399px)
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            position: absolute;
+            width: 45%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            padding-bottom: 0;
+        }
+
+        // Desktop medium (1400px - 1599px)
+        @media (min-width: 1400px) and (max-width: 1599px) {
+            position: absolute;
+            width: 45%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            padding-bottom: 0;
+        }
+
+        // Desktop large (1600px - 1919px)
+        @media (min-width: 1600px) and (max-width: 1919px) {
+            position: absolute;
+            width: 45%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            padding-bottom: 0;
+        }
+
+        // Desktop extra large (1920px+)
+        @media (min-width: 1920px) {
+            position: absolute;
+            width: 45%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            padding-bottom: 0;
+        }
+
         img {
             width: 450px;
             height: 450px;
@@ -445,6 +693,30 @@
             @media (min-width: 1024px) and (max-width: 1366px) {
                 width: 350px;
                 height: 350px;
+            }
+
+            // Desktop small (up to 1399px)
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                width: 400px;
+                height: 400px;
+            }
+
+            // Desktop medium (1400px - 1599px)
+            @media (min-width: 1400px) and (max-width: 1599px) {
+                width: 420px;
+                height: 420px;
+            }
+
+            // Desktop large (1600px - 1919px)
+            @media (min-width: 1600px) and (max-width: 1919px) {
+                width: 440px;
+                height: 440px;
+            }
+
+            // Desktop extra large (1920px+)
+            @media (min-width: 1920px) {
+                width: 460px;
+                height: 460px;
             }
 
 

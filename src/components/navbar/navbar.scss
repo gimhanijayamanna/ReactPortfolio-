@@ -8,6 +8,26 @@
     width: 100%;
     z-index: 1000;
 
+    // Desktop small (up to 1399px)
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        height: 110px;
+    }
+
+    // Desktop medium (1400px - 1599px)
+    @media (min-width: 1400px) and (max-width: 1599px) {
+        height: 115px;
+    }
+
+    // Desktop large (1600px - 1919px)
+    @media (min-width: 1600px) and (max-width: 1919px) {
+        height: 120px;
+    }
+
+    // Desktop extra large (1920px+)
+    @media (min-width: 1920px) {
+        height: 130px;
+    }
+
     .wrapper {
         max-width: 1366px;
         margin: auto;
@@ -25,6 +45,30 @@
             padding: 50px;
         }
 
+        // Desktop small (up to 1399px)
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            max-width: 1200px;
+            padding: 0 60px;
+        }
+
+        // Desktop medium (1400px - 1599px)
+        @media (min-width: 1400px) and (max-width: 1599px) {
+            max-width: 1300px;
+            padding: 0 80px;
+        }
+
+        // Desktop large (1600px - 1919px)
+        @media (min-width: 1600px) and (max-width: 1919px) {
+            max-width: 1400px;
+            padding: 0 100px;
+        }
+
+        // Desktop extra large (1920px+)
+        @media (min-width: 1920px) {
+            max-width: 1500px;
+            padding: 0 120px;
+        }
+
         span {
             font-weight: bold;
             margin-left: 50px;
@@ -33,17 +77,62 @@
             @include mobile {
                 display: none;
             }
+
+            // Desktop small (up to 1399px)
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                margin-left: 0;
+                font-size: 1.2rem;
+            }
+
+            // Desktop medium (1400px - 1599px)
+            @media (min-width: 1400px) and (max-width: 1599px) {
+                margin-left: 0;
+                font-size: 1.3rem;
+            }
+
+            // Desktop large (1600px - 1919px)
+            @media (min-width: 1600px) and (max-width: 1919px) {
+                margin-left: 0;
+                font-size: 1.4rem;
+            }
+
+            // Desktop extra large (1920px+)
+            @media (min-width: 1920px) {
+                margin-left: 0;
+                font-size: 1.5rem;
+            }
         }
 
         .social {
             display: flex;
             gap: 20px;
 
+            // Desktop small (up to 1399px)
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                gap: 25px;
+            }
+
+            // Desktop medium (1400px - 1599px)
+            @media (min-width: 1400px) and (max-width: 1599px) {
+                gap: 28px;
+            }
+
+            // Desktop large (1600px - 1919px)
+            @media (min-width: 1600px) and (max-width: 1919px) {
+                gap: 30px;
+            }
+
+            // Desktop extra large (1920px+)
+            @media (min-width: 1920px) {
+                gap: 35px;
+            }
+
             img {
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
                 cursor: pointer;
+                transition: transform 0.3s ease, opacity 0.3s ease;
 
                 @include mobile {
                     width: 16px;
@@ -53,6 +142,35 @@
                 @include tablet {
                     width: 25px;
                     height: 25px;
+                }
+
+                // Desktop small (up to 1399px)
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                // Desktop medium (1400px - 1599px)
+                @media (min-width: 1400px) and (max-width: 1599px) {
+                    width: 26px;
+                    height: 26px;
+                }
+
+                // Desktop large (1600px - 1919px)
+                @media (min-width: 1600px) and (max-width: 1919px) {
+                    width: 28px;
+                    height: 28px;
+                }
+
+                // Desktop extra large (1920px+)
+                @media (min-width: 1920px) {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                    opacity: 0.8;
                 }
             }
         }
