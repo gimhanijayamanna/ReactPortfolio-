@@ -159,7 +159,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
 
             @include mobile {
                 width: 100%;
@@ -228,7 +228,7 @@
             // Desktop large (1600px - 1919px)
             @media (min-width: 1600px) and (max-width: 1919px) {
                 width: 55%;
-                gap: 45px;
+                gap: 30px;
                 margin-top: 0;
                 padding: 0;
                 margin-bottom: 0;
@@ -246,7 +246,7 @@
             h2 {
                 font-size: 50px;
                 color: rebeccapurple;
-                letter-spacing: 10px;
+                letter-spacing: 5px;
 
                 @include mobile {
                     letter-spacing: 3px; // Reduced from 5px
@@ -299,8 +299,8 @@
                 // Desktop large (1600px - 1919px)
                 @media (min-width: 1600px) and (max-width: 1919px) {
                     font-size: 60px;
-                    letter-spacing: 14px;
-                    margin-bottom: 25px;
+                    letter-spacing: 5px;
+                    margin-bottom: 15px;
                 }
 
                 // Desktop extra large (1920px+)
@@ -359,7 +359,7 @@
                 // Desktop large (1600px - 1919px)
                 @media (min-width: 1600px) and (max-width: 1919px) {
                     font-size: 46px;
-                    margin-bottom: 20px;
+                    margin-bottom: 5px;
                 }
 
                 // Desktop extra large (1920px+)

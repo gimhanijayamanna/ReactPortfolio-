@@ -5,6 +5,13 @@ html {
     /* Prevent over-scrolling */
     width: 100%;
     height: 100%;
+
+    // Enhanced mobile scrolling
+    @media (max-width: 1024px) {
+        scroll-snap-type: y proximity;
+        -webkit-overflow-scrolling: touch;
+        scroll-padding-top: 0;
+    }
 }
 
 * {
@@ -25,6 +32,14 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+
+    // Enhanced mobile scrolling
+    @media (max-width: 1024px) {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        overscroll-behavior-y: contain;
+        touch-action: pan-y;
+    }
 }
 
 a {
@@ -39,15 +54,18 @@ section {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-}
 
-// Enhanced Mobile Breakpoints
-@mixin mobile {
-    @media (max-width: 767px) {
-        @content;
+    // Enhanced mobile scrolling
+    @media (max-width: 1024px) {
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: auto;
     }
 }
 
+// Enhanced responsive breakpoint system for 100% device coverage
 @mixin mobile-xs {
     @media (max-width: 320px) {
         @content;
@@ -72,9 +90,8 @@ section {
     }
 }
 
-// Enhanced Tablet Breakpoints
-@mixin tablet {
-    @media (min-width: 768px) and (max-width: 1024px) {
+@mixin mobile {
+    @media (max-width: 767px) {
         @content;
     }
 }
@@ -85,69 +102,72 @@ section {
     }
 }
 
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
 @mixin tablet-large {
-    @media (min-width: 835px) and (max-width: 1024px) {
-        @content;
-    }
-}
-
-// Enhanced Desktop Breakpoints
-@mixin desktop {
-    @media (min-width: 1025px) {
-        @content;
-    }
-}
-
-@mixin desktop-small {
     @media (min-width: 1025px) and (max-width: 1199px) {
         @content;
     }
 }
 
-@mixin desktop-medium {
+@mixin desktop-small {
     @media (min-width: 1200px) and (max-width: 1399px) {
         @content;
     }
 }
 
+@mixin desktop {
+    @media (min-width: 1400px) and (max-width: 1679px) {
+        @content;
+    }
+}
+
 @mixin desktop-large {
-    @media (min-width: 1400px) and (max-width: 1599px) {
+    @media (min-width: 1680px) and (max-width: 1919px) {
         @content;
     }
 }
 
 @mixin desktop-xl {
-    @media (min-width: 1600px) and (max-width: 1919px) {
+    @media (min-width: 1920px) and (max-width: 2559px) {
         @content;
     }
 }
 
-@mixin desktop-xxl {
-    @media (min-width: 1920px) {
+@mixin desktop-4k {
+    @media (min-width: 2560px) {
         @content;
     }
 }
 
-// Specific device targets
-@mixin iphone-se {
-    @media (min-width: 320px) and (max-width: 375px) and (-webkit-device-pixel-ratio: 2) {
+// Landscape orientation mixin
+@mixin landscape {
+    @media (orientation: landscape) {
         @content;
     }
 }
 
-@mixin ipad {
-    @media (min-width: 768px) and (max-width: 1024px) and (-webkit-device-pixel-ratio: 2) {
+// Portrait orientation mixin
+@mixin portrait {
+    @media (orientation: portrait) {
         @content;
     }
 }
 
-@mixin ipad-pro {
-    @media (min-width: 1024px) and (max-width: 1366px) and (-webkit-device-pixel-ratio: 2) {
+// High DPI displays
+@mixin retina {
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx) {
         @content;
     }
 }
 
-/* Enhanced responsive fixes */
+/* Enhanced viewport fixes for all tablet sizes */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     * {
         max-width: 100%;
@@ -163,23 +183,15 @@ section {
     }
 }
 
-/* Responsive typography scaling */
-:root {
-    --base-font-size: 16px;
-
-    @include mobile-xs {
-        --base-font-size: 14px;
+/* Large tablet and small desktop fixes */
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+    * {
+        max-width: 100%;
     }
 
-    @include mobile-small {
-        --base-font-size: 15px;
-    }
-
-    @include tablet {
-        --base-font-size: 17px;
-    }
-
-    @include desktop {
-        --base-font-size: 18px;
+    section {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }

@@ -2,7 +2,136 @@
 
 .projectsGroup {
     position: relative;
-    width: 100%;
+}
+
+.projectsStickyTitle {
+    position: sticky;
+    top: 60px; // just under navbar (navbar is 100px high; adjust if needed)
+    z-index: 20;
+    text-align: center;
+    pointer-events: none;
+    margin-top: 40px;
+
+    h1 {
+        font-size: 3rem;
+        /* match skills-title */
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 24px;
+        letter-spacing: 2px;
+        text-align: center;
+        animation: fadeInDown 1s;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        @include mobile-xs {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        @include mobile-small {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        @include mobile-medium {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.7px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        @include mobile-large {
+            font-size: 1.7rem;
+            margin-bottom: 14px;
+            letter-spacing: 0.9px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+
+        @include mobile {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        @include tablet-small {
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+            letter-spacing: 1.5px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        @include tablet {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1.7px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        @include tablet-large {
+            font-size: 2.7rem;
+            margin-bottom: 22px;
+            letter-spacing: 1.9px;
+            padding-top: 22px;
+            padding-bottom: 22px;
+        }
+
+        @include desktop-small {
+            font-size: 2.9rem;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        @include desktop-large {
+            font-size: 3.2rem;
+            margin-bottom: 28px;
+            letter-spacing: 2.5px;
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        @include desktop-xl {
+            font-size: 3.5rem;
+            margin-bottom: 32px;
+            letter-spacing: 3px;
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        @include desktop-4k {
+            font-size: 4rem;
+            margin-bottom: 36px;
+            letter-spacing: 3.5px;
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .projectSlide {
@@ -11,55 +140,114 @@
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    padding-top: clamp(80px, 15vh, 120px);
+    padding-top: 110px; // navbar space + header
     box-sizing: border-box;
     background: radial-gradient(circle at 25% 25%, #1b1b35, #0c0c1d 70%);
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+
 
     .content {
         margin: auto;
         width: 100%;
-        max-width: 1400px;
-        padding: 0 clamp(15px, 4vw, 60px);
+        max-width: 1300px;
+        padding: 0 60px;
         display: grid;
-        grid-template-columns: 1fr;
-        gap: clamp(20px, 6vw, 60px);
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 60px;
         align-items: center;
-        box-sizing: border-box;
 
-        @include mobile {
-            padding: 0 15px;
-            gap: 20px;
-            display: flex;
+        @include mobile-xs {
             flex-direction: column;
+            text-align: center;
             justify-content: center;
             align-items: center;
+            padding: 0 10px;
+            gap: 15px;
+        }
+
+        @include mobile-small {
+            flex-direction: column;
             text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 0 12px;
+            gap: 18px;
+        }
+
+        @include mobile-medium {
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 0 14px;
+            gap: 22px;
+        }
+
+        @include mobile-large {
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+            gap: 25px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+            gap: 25px;
+        }
+
+        @include tablet-small {
+            max-width: 100%;
+            width: 100%;
+            padding: 0 25px;
+            grid-template-columns: 1fr;
+            gap: 35px;
         }
 
         @include tablet {
+            max-width: 100%;
+            width: 100%;
             padding: 0 30px;
-            gap: 30px;
             grid-template-columns: 1fr;
+            gap: 40px;
         }
 
-        @include desktop {
+        @include tablet-large {
+            max-width: 100%;
+            width: 100%;
             padding: 0 40px;
+            grid-template-columns: 1fr;
             gap: 50px;
-            grid-template-columns: minmax(300px, 1fr) minmax(400px, 1.2fr);
-            align-items: center;
         }
 
-        @include desktop-medium {
-            max-width: 1500px;
-            gap: 60px;
-        }
-
-        @include desktop-xxl {
-            max-width: 1600px;
+        @include desktop-small {
+            max-width: 1400px;
+            padding: 0 50px;
             gap: 70px;
+        }
+
+        @include desktop-large {
+            max-width: 1600px;
+            padding: 0 70px;
+            gap: 80px;
+        }
+
+        @include desktop-xl {
+            max-width: 1800px;
+            padding: 0 90px;
+            gap: 90px;
+        }
+
+        @include desktop-4k {
+            max-width: 2200px;
+            padding: 0 120px;
+            gap: 100px;
         }
     }
 
@@ -67,51 +255,135 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        order: 1;
 
-        @include desktop {
-            order: 0;
+        @include mobile-xs {
+            width: 100%;
+            max-height: 150px;
+        }
+
+        @include mobile-small {
+            width: 100%;
+            max-height: 180px;
+        }
+
+        @include mobile-medium {
+            width: 100%;
+            max-height: 190px;
+        }
+
+        @include mobile-large {
+            width: 100%;
+            max-height: 200px;
+        }
+
+        @include mobile {
+            width: 100%;
+            max-height: 200px;
+        }
+
+        @include tablet-small {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 300px;
+        }
+
+        @include tablet {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 350px;
+        }
+
+        @include tablet-large {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 400px;
+        }
+
+        @include desktop-large {
+            max-height: 450px;
+        }
+
+        @include desktop-xl {
+            max-height: 500px;
+        }
+
+        @include desktop-4k {
+            max-height: 600px;
         }
 
         img {
             width: 100%;
-            max-width: clamp(250px, 80vw, 650px);
-            height: auto;
+            max-width: 600px;
             aspect-ratio: 16 / 9;
             object-fit: cover;
-            border-radius: clamp(8px, 2vw, 18px);
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
-
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.7);
-            }
+            box-shadow: 0 10px 32px -8px rgba(0, 0, 0, 0.65);
 
             @include mobile-xs {
-                max-width: 280px;
-                border-radius: 8px;
+                max-width: 180px;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px -3px rgba(0, 0, 0, 0.4);
             }
 
             @include mobile-small {
-                max-width: 320px;
-                border-radius: 10px;
+                max-width: 200px;
+                border-radius: 8px;
+                box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.45);
             }
 
             @include mobile-medium {
-                max-width: 350px;
+                max-width: 240px;
+                border-radius: 9px;
+                box-shadow: 0 3px 14px -5px rgba(0, 0, 0, 0.47);
+            }
+
+            @include mobile-large {
+                max-width: 260px;
+                border-radius: 10px;
+                box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.5);
+            }
+
+            @include mobile {
+                max-width: 280px;
+                border-radius: 10px;
+                box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.5);
+            }
+
+            @include tablet-small {
+                max-width: 400px;
                 border-radius: 12px;
             }
 
             @include tablet {
                 max-width: 500px;
+                border-radius: 14px;
+            }
+
+            @include tablet-large {
+                max-width: 550px;
                 border-radius: 16px;
             }
 
-            @include desktop {
-                max-width: 100%;
-                border-radius: 18px;
+            @include desktop-large {
+                max-width: 700px;
+                border-radius: 20px;
+            }
+
+            @include desktop-xl {
+                max-width: 800px;
+                border-radius: 22px;
+            }
+
+            @include desktop-4k {
+                max-width: 900px;
+                border-radius: 25px;
             }
         }
     }
@@ -119,137 +391,293 @@
     .textContainer {
         display: flex;
         flex-direction: column;
-        gap: clamp(15px, 4vw, 30px);
-        order: 2;
+        gap: 28px;
+
+        @include mobile-xs {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        @include mobile-small {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            gap: 12px;
+        }
+
+        @include mobile-medium {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            gap: 14px;
+        }
+
+        @include mobile-large {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            gap: 15px;
+        }
 
         @include mobile {
             align-items: center;
             text-align: center;
             width: 100%;
+            gap: 15px;
+        }
+
+        @include tablet-small {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            gap: 22px;
         }
 
         @include tablet {
             align-items: center;
             text-align: center;
+            width: 100%;
+            gap: 25px;
         }
 
-        @include desktop {
-            align-items: flex-start;
-            text-align: left;
-            order: 1;
+        @include tablet-large {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            gap: 30px;
+        }
+
+        @include desktop-large {
+            gap: 35px;
+        }
+
+        @include desktop-xl {
+            gap: 40px;
+        }
+
+        @include desktop-4k {
+            gap: 45px;
         }
 
         h2 {
-            font-size: clamp(1.1rem, 5vw, 3rem);
-            font-weight: 700;
+            font-size: clamp(1.8rem, 3.2vw, 3rem);
             background: linear-gradient(90deg, #ffb347, #ffcc33);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            line-height: 1.2;
-            margin-bottom: clamp(10px, 2vw, 20px);
 
             @include mobile-xs {
-                font-size: 1.05rem;
-                line-height: 1.3;
+                font-size: 1rem;
+                align-items: center;
+                text-align: center;
+                padding: 2px;
             }
 
             @include mobile-small {
-                font-size: 1.15rem;
+                font-size: 1.1rem;
+                align-items: center;
+                text-align: center;
+                padding: 2px;
             }
 
             @include mobile-medium {
-                font-size: 1.25rem;
+                font-size: 1.15rem;
+                align-items: center;
+                text-align: center;
+                padding: 2.5px;
             }
 
             @include mobile-large {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
+                align-items: center;
+                text-align: center;
+                padding: 3px;
+            }
+
+            @include mobile {
+                font-size: 1.2rem;
+                align-items: center;
+                text-align: center;
             }
 
             @include tablet-small {
+                text-align: center;
                 font-size: 1.8rem;
             }
 
-            @include tablet-large {
+            @include tablet {
+                text-align: center;
                 font-size: 2.2rem;
             }
 
-            @include desktop-small {
-                font-size: 2.4rem;
-            }
-
-            @include desktop-medium {
+            @include tablet-large {
+                text-align: center;
                 font-size: 2.6rem;
             }
 
             @include desktop-large {
-                font-size: 2.8rem;
+                font-size: 3.4rem;
             }
 
-            @include desktop-xxl {
-                font-size: 3rem;
+            @include desktop-xl {
+                font-size: 3.8rem;
+            }
+
+            @include desktop-4k {
+                font-size: 4.2rem;
             }
         }
 
         p {
-            font-size: clamp(0.75rem, 2.5vw, 1.1rem);
-            line-height: clamp(1.4, 1.5, 1.6);
+            font-size: 1rem;
+            line-height: 1.5;
             color: #d0d0dc;
-            max-width: 100%;
-            margin-bottom: clamp(15px, 3vw, 25px);
+            max-width: 560px;
 
-            @include desktop {
-                max-width: 90%;
+            @include mobile-xs {
+                font-size: 0.65rem;
+                padding: 2px;
+                align-items: center;
+                text-align: center;
+                line-height: 1.3;
+            }
+
+            @include mobile-small {
+                font-size: 0.7rem;
+                padding: 3px;
+                align-items: center;
+                text-align: center;
+                line-height: 1.4;
+            }
+
+            @include mobile-medium {
+                font-size: 0.75rem;
+                padding: 4px;
+                align-items: center;
+                text-align: center;
+                line-height: 1.4;
+            }
+
+            @include mobile-large {
+                font-size: 0.8rem;
+                padding: 5px;
+                align-items: center;
+                text-align: center;
+                line-height: 1.4;
+            }
+
+            @include mobile {
+                font-size: 0.8rem;
+                padding: 5px;
+                align-items: center;
+                text-align: center;
+            }
+
+            @include tablet-small {
+                text-align: center;
+                margin: 0 auto;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            @include tablet {
+                text-align: center;
+                margin: 0 auto;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+
+            @include tablet-large {
+                text-align: center;
+                margin: 0 auto;
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
+
+            @include desktop-large {
+                font-size: 1.3rem;
+                line-height: 1.7;
+            }
+
+            @include desktop-xl {
+                font-size: 1.4rem;
+                line-height: 1.8;
+            }
+
+            @include desktop-4k {
+                font-size: 1.6rem;
+                line-height: 1.9;
             }
         }
 
         .meta {
             display: flex;
             flex-direction: column;
-            gap: clamp(12px, 3vw, 20px);
-            font-size: clamp(0.7rem, 2vw, 1rem);
-            width: 100%;
+            gap: 14px;
+            font-size: 0.9rem;
 
             @include mobile {
                 align-items: center;
                 text-align: center;
+                width: 100%;
+                gap: 10px; // Reduced from 14px
+                font-size: 0.75rem; // Reduced font size
+            }
+
+            // Very small mobile screens
+            @media (max-width: 375px) {
+                gap: 8px; // Further reduced
+                font-size: 0.65rem; // Further reduced
             }
 
             @include tablet {
                 align-items: center;
                 text-align: center;
-            }
-
-            @include desktop {
-                align-items: flex-start;
-                text-align: left;
+                width: 100%;
+                font-size: 1rem;
             }
 
             .label {
                 font-weight: 600;
                 text-transform: uppercase;
-                letter-spacing: clamp(0.5px, 0.1vw, 1px);
-                font-size: clamp(0.6rem, 1.8vw, 0.8rem);
-                margin-bottom: clamp(4px, 1vw, 8px);
+                letter-spacing: 1px;
+                font-size: 0.7rem;
+                margin-right: 8px;
                 color: #ffcc66;
-                display: block;
+
+                @include tablet {
+                    font-size: 0.8rem;
+                }
+
+                @include mobile {
+                    font-size: 0.6rem; // Added mobile specific size
+                    margin-right: 6px; // Reduced margin
+                }
+
+                // Very small mobile screens
+                @media (max-width: 375px) {
+                    font-size: 0.55rem; // Further reduced
+                    margin-right: 4px;
+                }
             }
 
             .role {
                 color: #f2f2f7;
-                margin-bottom: clamp(10px, 2vw, 15px);
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
 
                 .role-description {
                     color: #f2f2f7;
-                    font-size: clamp(0.7rem, 2vw, 0.95rem);
-                    line-height: 1.4;
                 }
             }
 
             .techStack {
                 display: flex;
                 flex-direction: column;
-                gap: clamp(6px, 1.5vw, 12px);
+                gap: 8px;
 
                 @include mobile {
                     align-items: center;
@@ -259,218 +687,154 @@
                 @include tablet {
                     align-items: center;
                     text-align: center;
-                }
-
-                @include desktop {
-                    align-items: flex-start;
-                    text-align: left;
+                    justify-content: center;
                 }
 
                 ul {
                     list-style: none;
                     display: flex;
                     flex-wrap: wrap;
-                    gap: clamp(4px, 1.5vw, 12px);
+                    gap: 10px;
                     padding: 0;
                     margin: 0;
-                    justify-content: center;
 
-                    @include desktop {
-                        justify-content: flex-start;
+                    @include mobile {
+                        justify-content: center;
+                        gap: 6px; // Reduced from 10px
+                    }
+
+                    // Very small mobile screens
+                    @media (max-width: 375px) {
+                        gap: 4px; // Further reduced
+                    }
+
+                    @include tablet {
+                        justify-content: center;
                     }
 
                     li {
-                        padding: clamp(4px, 1.5vw, 8px) clamp(8px, 3vw, 16px);
+                        padding: 6px 14px;
                         background: linear-gradient(135deg, rgba(255, 179, 71, 0.25), rgba(255, 140, 0, 0.15));
                         border: 1px solid rgba(255, 200, 120, 0.25);
-                        border-radius: clamp(15px, 5vw, 40px);
-                        font-size: clamp(0.5rem, 1.8vw, 0.75rem);
-                        font-weight: 500;
-                        letter-spacing: 0.3px;
+                        border-radius: 40px;
+                        font-size: 0.7rem;
+                        letter-spacing: 0.5px;
                         color: #ffe2b0;
                         backdrop-filter: blur(4px);
-                        box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.4);
-                        transition: all 0.3s ease;
-                        white-space: nowrap;
-
-                        &:hover {
-                            background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
-                            transform: translateY(-2px);
-                            box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
-                        }
-
-                        @include mobile-xs {
-                            padding: 3px 6px;
-                            font-size: 0.45rem;
-                            border-radius: 12px;
-                        }
-
-                        @include mobile-small {
-                            padding: 4px 8px;
-                            font-size: 0.5rem;
-                            border-radius: 15px;
-                        }
+                        box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+                        transition: background 0.3s ease, transform 0.3s ease;
 
                         @include tablet {
-                            padding: 6px 12px;
-                            font-size: 0.7rem;
+                            font-size: 0.8rem;
+                            padding: 8px 16px;
+                        }
+
+                        @include mobile {
+                            font-size: 0.6rem; // Added mobile specific size
+                            padding: 4px 10px; // Reduced padding
+                            border-radius: 30px; // Reduced radius
+                        }
+
+                        // Very small mobile screens
+                        @media (max-width: 375px) {
+                            font-size: 0.5rem; // Further reduced
+                            padding: 3px 8px; // Further reduced
                             border-radius: 25px;
                         }
 
-                        @include desktop {
-                            padding: 8px 16px;
-                            font-size: 0.75rem;
-                            border-radius: 30px;
-                        }
+
+                    }
+
+                    li:hover {
+                        background: linear-gradient(135deg, rgba(255, 179, 71, 0.45), rgba(255, 140, 0, 0.3));
+                        transform: translateY(-3px);
                     }
                 }
             }
         }
 
         button {
-            align-self: center;
-            padding: clamp(8px, 2.5vw, 16px) clamp(16px, 5vw, 32px);
+            align-self: flex-start;
+            padding: 12px 28px;
             background: linear-gradient(90deg, #ffb347, #ff8c00);
             border: none;
             color: #1b1b25;
             font-weight: 600;
-            border-radius: clamp(20px, 5vw, 40px);
+            border-radius: 40px;
             cursor: pointer;
-            font-size: clamp(0.7rem, 2.2vw, 1rem);
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
-            transition: all 0.35s ease;
-            box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.6);
-            margin-top: clamp(10px, 3vw, 20px);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            box-shadow: 0 8px 22px -8px rgba(0, 0, 0, 0.6);
 
-            @include desktop {
-                align-self: flex-start;
+            @include mobile {
+                align-self: center;
+                padding: 10px 20px; // Reduced from 12px 28px
+                font-size: 0.8rem; // Reduced font size
+                border-radius: 30px; // Reduced radius
             }
 
-            &::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
-                transform: translateX(-100%);
-                transition: transform 0.7s ease;
-            }
-
-            &:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.7);
-
-                &::after {
-                    transform: translateX(100%);
-                }
-            }
-
-            @include mobile-xs {
-                padding: 6px 12px;
-                font-size: 0.6rem;
-                border-radius: 18px;
-            }
-
-            @include mobile-small {
-                padding: 8px 16px;
-                font-size: 0.7rem;
-                border-radius: 20px;
+            // Very small mobile screens
+            @media (max-width: 375px) {
+                padding: 8px 16px; // Further reduced
+                font-size: 0.7rem; // Further reduced
+                border-radius: 25px;
             }
 
             @include tablet {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-                border-radius: 30px;
+                align-self: center;
+                font-size: 1.05rem;
+                padding: 14px 32px;
             }
+        }
 
-            @include desktop {
-                padding: 14px 28px;
-                font-size: 1rem;
-                border-radius: 35px;
-            }
+        button::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+            transform: translateX(-100%);
+            transition: transform 0.7s ease;
+        }
+
+        button:hover::after {
+            transform: translateX(100%);
+        }
+
+        button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px -10px rgba(0, 0, 0, 0.7);
         }
     }
 
-    /* Enhanced responsive breakpoints */
-    @include mobile-xs {
-        padding-top: 80px;
-        min-height: 100vh;
+    @media (max-width: 900px) {
+        .content {
+            padding: 0 30px;
+            gap: 40px;
+        }
     }
 
-    @include mobile-small {
-        padding-top: 85px;
+    @media (max-width: 600px) {
+        padding-top: 120px;
+
+        .projectsHeader {
+            top: 50px;
+        }
+
+        .content {
+            grid-template-columns: 1fr;
+            padding: 0 24px;
+        }
     }
 
-    @include mobile-medium {
-        padding-top: 90px;
-    }
+    // Very small mobile screens
+    @media (max-width: 375px) {
+        padding-top: 100px; // Further reduced
 
-    @include mobile-large {
-        padding-top: 95px;
-    }
-
-    @include tablet {
-        padding-top: 100px;
-    }
-
-    @include desktop {
-        padding-top: 110px;
-    }
-}
-
-/* Enhanced animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Loading states and progressive enhancement */
-.projectSlide {
-    .imageContainer img {
-        opacity: 0;
-        animation: fadeInImage 0.8s ease 0.3s forwards;
-    }
-
-    .textContainer>* {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInContent 0.6s ease forwards;
-    }
-
-    .textContainer>*:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .textContainer>*:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-
-    .textContainer>*:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-
-    .textContainer>*:nth-child(4) {
-        animation-delay: 0.4s;
-    }
-}
-
-@keyframes fadeInImage {
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInContent {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        .content {
+            padding: 0 15px; // Further reduced
+        }
     }
 }

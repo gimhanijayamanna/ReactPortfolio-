@@ -8,7 +8,6 @@ const Navbar = () => {
         <div className="navbar">
             <Sidebar />
             <div className="wrapper">
-                <motion.span initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>Gimhani Jayamanna</motion.span>
                 <div className="social">
                     <a href="https://www.linkedin.com/in/gimhani-jayamanna-41695a276/"><img src="/linkedin.jpeg" alt="LinkedIn" /></a>
                     <a href="https://github.com/gimhanijayamanna"><img src="/github.png" alt="GitHub" /></a>

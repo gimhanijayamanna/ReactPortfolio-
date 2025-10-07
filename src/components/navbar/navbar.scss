@@ -8,123 +8,106 @@
     width: 100%;
     z-index: 1000;
 
-    // Desktop small (up to 1399px)
-    @media (min-width: 1200px) and (max-width: 1399px) {
-        height: 110px;
+    @include mobile-xs {
+        height: 70px;
     }
 
-    // Desktop medium (1400px - 1599px)
-    @media (min-width: 1400px) and (max-width: 1599px) {
-        height: 115px;
+    @include mobile-small {
+        height: 80px;
     }
 
-    // Desktop large (1600px - 1919px)
-    @media (min-width: 1600px) and (max-width: 1919px) {
+    @include mobile {
+        height: 85px;
+    }
+
+    @include tablet {
+        height: 100px;
+    }
+
+    @include desktop-4k {
         height: 120px;
     }
 
-    // Desktop extra large (1920px+)
-    @media (min-width: 1920px) {
-        height: 130px;
-    }
-
     .wrapper {
-        max-width: 1366px;
-        margin: auto;
+        width: 100%;
+        height: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        height: 100%;
+        justify-content: flex-end; // Always position social icons to the right
+        position: relative; // For absolute positioning of name on larger screens
+        pointer-events: none; // Allow clicks to pass through wrapper
+
+        @include mobile-xs {
+            padding: 15px;
+        }
+
+        @include mobile-small {
+            padding: 18px;
+        }
 
         @include mobile {
-            justify-content: flex-end;
             padding: 25px;
+        }
+
+        @include tablet-small {
+            padding: 30px;
         }
 
         @include tablet {
             padding: 50px;
         }
 
-        // Desktop small (up to 1399px)
-        @media (min-width: 1200px) and (max-width: 1399px) {
-            max-width: 1200px;
+        @include tablet-large {
+            padding: 40px;
+        }
+
+        @include desktop {
             padding: 0 60px;
         }
 
-        // Desktop medium (1400px - 1599px)
-        @media (min-width: 1400px) and (max-width: 1599px) {
-            max-width: 1300px;
+        @include desktop-large {
             padding: 0 80px;
         }
 
-        // Desktop large (1600px - 1919px)
-        @media (min-width: 1600px) and (max-width: 1919px) {
-            max-width: 1400px;
+        @include desktop-xl {
             padding: 0 100px;
         }
 
-        // Desktop extra large (1920px+)
-        @media (min-width: 1920px) {
-            max-width: 1500px;
+        @include desktop-4k {
             padding: 0 120px;
-        }
-
-        span {
-            font-weight: bold;
-            margin-left: 50px;
-            font-size: larger;
-
-            @include mobile {
-                display: none;
-            }
-
-            // Desktop small (up to 1399px)
-            @media (min-width: 1200px) and (max-width: 1399px) {
-                margin-left: 0;
-                font-size: 1.2rem;
-            }
-
-            // Desktop medium (1400px - 1599px)
-            @media (min-width: 1400px) and (max-width: 1599px) {
-                margin-left: 0;
-                font-size: 1.3rem;
-            }
-
-            // Desktop large (1600px - 1919px)
-            @media (min-width: 1600px) and (max-width: 1919px) {
-                margin-left: 0;
-                font-size: 1.4rem;
-            }
-
-            // Desktop extra large (1920px+)
-            @media (min-width: 1920px) {
-                margin-left: 0;
-                font-size: 1.5rem;
-            }
         }
 
         .social {
             display: flex;
             gap: 20px;
+            pointer-events: auto; // Re-enable pointer events for social icons
 
-            // Desktop small (up to 1399px)
-            @media (min-width: 1200px) and (max-width: 1399px) {
+            @include mobile-xs {
+                gap: 10px;
+            }
+
+            @include mobile-small {
+                gap: 12px;
+            }
+
+            @include mobile {
+                gap: 15px;
+            }
+
+            @include tablet {
                 gap: 25px;
             }
 
-            // Desktop medium (1400px - 1599px)
-            @media (min-width: 1400px) and (max-width: 1599px) {
-                gap: 28px;
-            }
-
-            // Desktop large (1600px - 1919px)
-            @media (min-width: 1600px) and (max-width: 1919px) {
+            @include desktop-large {
                 gap: 30px;
             }
 
-            // Desktop extra large (1920px+)
-            @media (min-width: 1920px) {
+            @include desktop-xl {
                 gap: 35px;
+            }
+
+            @include desktop-4k {
+                gap: 40px;
             }
 
             img {
@@ -132,11 +115,26 @@
                 height: 20px;
                 border-radius: 50%;
                 cursor: pointer;
-                transition: transform 0.3s ease, opacity 0.3s ease;
+                transition: transform 0.3s ease;
+
+                @include mobile-xs {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                @include mobile-small {
+                    width: 15px;
+                    height: 15px;
+                }
 
                 @include mobile {
                     width: 16px;
                     height: 16px;
+                }
+
+                @include tablet-small {
+                    width: 22px;
+                    height: 22px;
                 }
 
                 @include tablet {
@@ -144,33 +142,23 @@
                     height: 25px;
                 }
 
-                // Desktop small (up to 1399px)
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                // Desktop medium (1400px - 1599px)
-                @media (min-width: 1400px) and (max-width: 1599px) {
-                    width: 26px;
-                    height: 26px;
-                }
-
-                // Desktop large (1600px - 1919px)
-                @media (min-width: 1600px) and (max-width: 1919px) {
+                @include desktop-large {
                     width: 28px;
                     height: 28px;
                 }
 
-                // Desktop extra large (1920px+)
-                @media (min-width: 1920px) {
-                    width: 30px;
-                    height: 30px;
+                @include desktop-xl {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                @include desktop-4k {
+                    width: 36px;
+                    height: 36px;
                 }
 
                 &:hover {
                     transform: scale(1.1);
-                    opacity: 0.8;
                 }
             }
         }

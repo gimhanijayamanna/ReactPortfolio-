@@ -16,9 +16,19 @@
         width: 300px;
         background: white;
 
+        @include mobile-xs {
+            width: 100%;
+        }
+
         @include mobile {
             width: 100%;
-            /* Initially hidden on mobile */
+        }
+
+        @include tablet-small {
+            width: 45%;
+            height: 100vh;
+            min-height: 100vh;
+            max-height: none;
         }
 
         @include tablet {
@@ -28,11 +38,30 @@
             max-height: none;
         }
 
-        /* Specific fix for larger tablets like iPad Air Pro */
-        @media screen and (min-width: 900px) and (max-width: 1024px) {
-            width: 45%;
+        @include tablet-large {
+            width: 40%;
             height: 100vh;
             min-height: 100vh;
+        }
+
+        @include desktop-small {
+            width: 350px;
+        }
+
+        @include desktop {
+            width: 380px;
+        }
+
+        @include desktop-large {
+            width: 400px;
+        }
+
+        @include desktop-xl {
+            width: 420px;
+        }
+
+        @include desktop-4k {
+            width: 450px;
         }
 
         .links {
@@ -45,16 +74,82 @@
             justify-content: center;
             gap: 20px;
 
+            @include mobile-xs {
+                gap: 15px;
+            }
+
+            @include mobile-small {
+                gap: 18px;
+            }
+
+            @include tablet {
+                gap: 25px;
+            }
+
+            @include desktop-large {
+                gap: 30px;
+            }
+
+            @include desktop-xl {
+                gap: 35px;
+            }
+
+            @include desktop-4k {
+                gap: 40px;
+            }
+
             a {
                 font-size: 25px;
                 font-weight: semi-bold;
+                transition: all 0.3s ease;
+
+                @include mobile-xs {
+                    font-size: 16px;
+                }
+
+                @include mobile-small {
+                    font-size: 18px;
+                }
 
                 @include mobile {
                     font-size: 20px;
                 }
 
+                @include tablet-small {
+                    font-size: 24px;
+                }
+
                 @include tablet {
                     font-size: 28px;
+                }
+
+                @include tablet-large {
+                    font-size: 26px;
+                }
+
+                @include desktop-small {
+                    font-size: 28px;
+                }
+
+                @include desktop {
+                    font-size: 30px;
+                }
+
+                @include desktop-large {
+                    font-size: 32px;
+                }
+
+                @include desktop-xl {
+                    font-size: 34px;
+                }
+
+                @include desktop-4k {
+                    font-size: 36px;
+                }
+
+                &:hover {
+                    color: #666;
+                    transform: translateX(5px);
                 }
             }
         }
@@ -65,10 +160,142 @@
         height: 50px;
         border-radius: 50%;
         position: fixed;
-        top: 25px;
-        left: 25px;
-        background-color: transparent;
+        top: 25px; // Center at 50px (25px + 25px radius)
+        left: 25px; // Center at 50px (25px + 25px radius)
+        background-color: white;
         border: none;
         cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1001; // Higher than navbar to ensure clickability
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        @include mobile-xs {
+            width: 40px;
+            height: 40px;
+            top: 30px; // Center at 50px (30px + 20px radius)
+            left: 30px; // Center at 50px (30px + 20px radius)
+        }
+
+        @include mobile-small {
+            width: 45px;
+            height: 45px;
+            top: 27.5px; // Center at 50px (27.5px + 22.5px radius)
+            left: 27.5px; // Center at 50px (27.5px + 22.5px radius)
+        }
+
+        @include tablet-small {
+            width: 48px;
+            height: 48px;
+            top: 26px; // Center at 50px (26px + 24px radius)
+            left: 26px; // Center at 50px (26px + 24px radius)
+        }
+
+        @include tablet {
+            width: 50px;
+            height: 50px;
+            top: 25px; // Center at 50px (25px + 25px radius)
+            left: 25px; // Center at 50px (25px + 25px radius)
+        }
+
+        @include tablet-large {
+            width: 52px;
+            height: 52px;
+            top: 24px; // Center at 50px (24px + 26px radius)
+            left: 24px; // Center at 50px (24px + 26px radius)
+        }
+
+        @include desktop-small {
+            width: 50px;
+            height: 50px;
+            top: 25px; // Center at 50px (25px + 25px radius)
+            left: 25px; // Center at 50px (25px + 25px radius)
+        }
+
+        @include desktop {
+            width: 52px;
+            height: 52px;
+            top: 24px; // Center at 50px (24px + 26px radius)
+            left: 24px; // Center at 50px (24px + 26px radius)
+        }
+
+        @include desktop-large {
+            width: 55px;
+            height: 55px;
+            top: 22.5px; // Center at 50px (22.5px + 27.5px radius)
+            left: 22.5px; // Center at 50px (22.5px + 27.5px radius)
+        }
+
+        @include desktop-xl {
+            width: 60px;
+            height: 60px;
+            top: 20px; // Center at 50px (20px + 30px radius)
+            left: 20px; // Center at 50px (20px + 30px radius)
+        }
+
+        @include desktop-4k {
+            width: 65px;
+            height: 65px;
+            top: 17.5px; // Center at 50px (17.5px + 32.5px radius)
+            left: 17.5px; // Center at 50px (17.5px + 32.5px radius)
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        svg {
+            width: 23px;
+            height: 23px;
+
+            @include mobile-xs {
+                width: 18px;
+                height: 18px;
+            }
+
+            @include mobile-small {
+                width: 20px;
+                height: 20px;
+            }
+
+            @include tablet-small {
+                width: 22px;
+                height: 22px;
+            }
+
+            @include tablet {
+                width: 23px;
+                height: 23px;
+            }
+
+            @include tablet-large {
+                width: 24px;
+                height: 24px;
+            }
+
+            @include desktop-small {
+                width: 23px;
+                height: 23px;
+            }
+
+            @include desktop {
+                width: 24px;
+                height: 24px;
+            }
+
+            @include desktop-large {
+                width: 28px;
+                height: 28px;
+            }
+
+            @include desktop-xl {
+                width: 32px;
+                height: 32px;
+            }
+
+            @include desktop-4k {
+                width: 36px;
+                height: 36px;
+            }
+        }
     }
 }
