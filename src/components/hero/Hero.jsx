@@ -47,10 +47,9 @@ const Hero = () => {
             });
         }
     };
-    // Replace the placeholders below with your actual Google Drive file IDs or share URLs.
-    // For direct download links from Drive use: https://drive.google.com/uc?export=download&id=FILE_ID
-    const SE_CV_LINK = 'https://drive.google.com/file/d/1IwGM4RkUHZu-e_xoOzOSl23iCmfHfbNR/view?usp=sharing';
-    const UI_CV_LINK = 'https://drive.google.com/uc?export=download&id=YOUR_UI_FILE_ID';
+
+    const SE_CV_LINK = 'https://drive.google.com/file/d/18WjnBqyHyPA5ZNEMjOZb1kgcZJhcwY_D/view?usp=sharing';
+    const UI_CV_LINK = 'https://drive.google.com/file/d/1njrF8SOMfSsSblIW7hg0nPXRYP0qMWih/view?usp=sharing';
 
     return (
         <div className="hero">
@@ -79,7 +78,7 @@ const Hero = () => {
                             variants={textVariants}
                             onClick={() => window.open(UI_CV_LINK, '_blank')}
                         >
-                            Download UI CV
+                            Download UI/UX CV
                         </motion.button>
                     </motion.div>
                 </motion.div>

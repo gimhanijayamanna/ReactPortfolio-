@@ -12,7 +12,7 @@ const technicalSkills = [
         skills: ["HTML", "CSS", "Javascript", "NodeJs", "ReactJs", "NextJs", "Tailwind CSS"],
     },
     {
-        title: "Database",
+        title: "Database technologies",
         skills: ["MySQL", "MSSQL", "MongoDB"],
     },
     {
@@ -25,7 +25,7 @@ const technicalSkills = [
     },
     {
         title: "Version Controlling",
-        skills: ["Git (GitHub)"]
+        skills: ["Git", "GitHub"]
     },
     {
         title: "Project Management Tools",
@@ -34,11 +34,11 @@ const technicalSkills = [
 ];
 
 const softSkills = [
-    "Leadership",
+    "Leadership Skills",
     "Time Management",
     "Teamwork",
-    "Fluent in English and Sinhala",
-    "Adaptability to change"
+    "Communication Skills",
+    "Adaptability"
 ];
 
 const SkillSlide = ({ children, title, variants }) => {

@@ -16,7 +16,7 @@ const items = [
     {
         id: 2,
         title: "Giggly – Real-time Chat Application",
-        role: "Full-Stack Developer– Real-time Messaging, File Sharing, Notifications and User Management",
+        role: "Full-Stack Developer – Real-time Messaging, File Sharing, Notifications and User Management and UI",
         technologies: ["React.js", "Firebase (Firestore, Authentication)", "Cloudinary", "CSS3", "JavaScript"],
         img: "/giggly.png",
         desc: "Real-time chat with presence, file sharing, emoji support, unread indicators, and responsive interface for seamless communication.",
@@ -27,7 +27,7 @@ const items = [
         title: "Portfolio Website",
         role: "Full Stack Developer, UI Designer",
         technologies: ["React", "Vite", "Framer Motion", "SCSS"],
-        img: "/pf.png",
+        img: "/portfolio.png",
         desc: "Modern portfolio showcasing skills, animations, parallax sections, and responsive design for an engaging user experience.",
         repo: "https://github.com/gimhanijayamanna/ReactPortfolio-"
     },
