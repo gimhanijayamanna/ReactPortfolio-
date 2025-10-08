@@ -6,13 +6,6 @@ This repository contains a personal portfolio web application built with React a
 - Project overview
 - Tech stack
 - Project structure
-- Local development
-- Build & deploy
-- How to update CV download buttons
-- EmailJS (contact form) setup
-- Styling and responsive system
-- Contributing
-- License
 
 ## Project overview
 
