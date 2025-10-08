@@ -245,7 +245,13 @@
 
             h2 {
                 font-size: 50px;
-                color: rebeccapurple;
+                /* gradient text: keep the original color as a sensible fallback */
+                color: rgb(129, 71, 187);
+                background: linear-gradient(90deg, #8147bb 0%, #d18fe8 45%, #ffcc66 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                /* preserve letter spacing */
                 letter-spacing: 5px;
 
                 @include mobile {
