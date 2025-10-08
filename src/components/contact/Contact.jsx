@@ -21,7 +21,7 @@ const variants = {
 const Contact = () => {
     const ref = useRef();
     const formRef = useRef();
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
 
     const isInView = useInView(ref, { margin: "-100px" });
@@ -29,18 +29,26 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        // Reset previous states
+        setError(false);
+        setSuccess(false);
+
         emailjs
             .sendForm(
-                "service_oj90e0n",
-                "template_2z02j3d",
+                "service_d0zus5m",
+                "template_jr6ne0l",
                 formRef.current,
                 "M8SVOGJ2u6n8poXl6"
             )
             .then(
                 (result) => {
-                    setSuccess(true)
+                    console.log('Email sent successfully:', result.text);
+                    setSuccess(true);
+                    // Only reset form after successful submission
+                    formRef.current.reset();
                 },
                 (error) => {
+                    console.error('Email sending failed:', error.text);
                     setError(true);
                 }
             );
@@ -108,10 +116,10 @@ const Contact = () => {
                 >
                     <input type="text" required placeholder="Name" name="name" />
                     <input type="email" required placeholder="Email" name="email" />
-                    <textarea rows={8} placeholder="Message" name="message" />
-                    <button>Submit</button>
-                    {error && "Error"}
-                    {success && "Success"}
+                    <textarea rows={8} required placeholder="Message" name="message" />
+                    <button type="submit">Submit</button>
+                    {error && <div style={{ color: 'red', marginTop: '10px' }}>Failed to send message. Please try again.</div>}
+                    {success && <div style={{ color: 'green', marginTop: '10px' }}>Message sent successfully!</div>}
                 </motion.form>
             </div>
         </motion.div>
